@@ -12,7 +12,7 @@ namespace Activity1_Croteau
         {
             //declare/initialize variables
             String strFirst, strOperand, strNum1, strNum2;
-            Double dblNum1, dblNum2, result = 0;
+            Double dblNum1, dblNum2, dblResult = 0;
 
             //print to the console
             Console.WriteLine("Hello There!");
@@ -43,22 +43,22 @@ namespace Activity1_Croteau
             {
                 case "PLUS":
                     //use addition
-                    result = dblNum1 + dblNum2;
+                    dblResult = dblNum1 + dblNum2;
                     break;
 
                 case "MINUS":
                     //use subtractions
-                    result = dblNum1 - dblNum2;
+                    dblResult = dblNum1 - dblNum2;
                     break;
 
                 case "MULTIPLY":
                     //use multiplication
-                    result = dblNum1 * dblNum2;
+                    dblResult = dblNum1 * dblNum2;
                     break;
 
                 case "DIVIDE":
                     //use division
-                    result = dblNum1 / dblNum2;
+                    dblResult = dblNum1 / dblNum2;
                     break;
 
                 default:
@@ -69,22 +69,22 @@ namespace Activity1_Croteau
 
             if (strOperand == "PLUS")
             {
-                Console.WriteLine($"\n\nThe sum of {dblNum1} and {dblNum2} equals: {result}.");
+                Console.WriteLine($"\n\nThe sum of {dblNum1} and {dblNum2} equals: {dblResult}.");
             }
 
             else if (strOperand == "MINUS")
             {
-                Console.WriteLine($"\n\nThe difference of {dblNum1} and {dblNum2} equals: {result}.");
+                Console.WriteLine($"\n\nThe difference of {dblNum1} and {dblNum2} equals: {dblResult}.");
             }
 
             else if (strOperand == "MULTIPLY")
             {
-                Console.WriteLine($"\n\nThe product of {dblNum1} and {dblNum2} equals: {result}.");
+                Console.WriteLine($"\n\nThe product of {dblNum1} and {dblNum2} equals: {dblResult}.");
             }
 
             else if (strOperand == "DIVIDE")
             {
-                Console.WriteLine($"\n\nThe quotient of {dblNum1} and {dblNum2} equals: {result}.");
+                Console.WriteLine($"\n\nThe quotient of {dblNum1} and {dblNum2} equals: {dblResult}.");
             }
 
             //Pause the console so that the user can view the information prior to the application closing
