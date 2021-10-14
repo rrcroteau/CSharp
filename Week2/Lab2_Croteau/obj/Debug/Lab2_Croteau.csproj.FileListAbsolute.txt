@@ -1,0 +1,7 @@
+C:\Users\008012980\Desktop\SE245\Week2\Lab2_Croteau\obj\Debug\Lab2_Croteau.csproj.AssemblyReference.cache
+C:\Users\008012980\Desktop\SE245\Week2\Lab2_Croteau\obj\Debug\Lab2_Croteau.csproj.CoreCompileInputs.cache
+C:\Users\008012980\Desktop\SE245\Week2\Lab2_Croteau\bin\Debug\Lab2_Croteau.exe.config
+C:\Users\008012980\Desktop\SE245\Week2\Lab2_Croteau\bin\Debug\Lab2_Croteau.exe
+C:\Users\008012980\Desktop\SE245\Week2\Lab2_Croteau\bin\Debug\Lab2_Croteau.pdb
+C:\Users\008012980\Desktop\SE245\Week2\Lab2_Croteau\obj\Debug\Lab2_Croteau.exe
+C:\Users\008012980\Desktop\SE245\Week2\Lab2_Croteau\obj\Debug\Lab2_Croteau.pdb
