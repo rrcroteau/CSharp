@@ -15,7 +15,7 @@ namespace Lab4_Croteau
 {
     class Program
     {
-        //create a structure to hold a person's information
+        //create a class to hold a person's information
         public class Person
         {
             private string fName; //first name
