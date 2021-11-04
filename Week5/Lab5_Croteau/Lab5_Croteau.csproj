@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6C6BA286-A001-48F7-99F5-3CB2B15DE0DE}</ProjectGuid>
+    <ProjectGuid>{62A82343-D8F1-4E62-BE9C-E72F9E82FE6F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WinBook_Croteau</RootNamespace>
-    <AssemblyName>WinBook_Croteau</AssemblyName>
+    <RootNamespace>Lab5_Croteau</RootNamespace>
+    <AssemblyName>Lab5_Croteau</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,13 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Book.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validator.cs" />

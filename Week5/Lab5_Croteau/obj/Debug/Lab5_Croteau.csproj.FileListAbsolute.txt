@@ -1,0 +1,10 @@
+C:\Users\008012980\Desktop\SE245\Week5\Lab5_Croteau\bin\Debug\Lab5_Croteau.exe.config
+C:\Users\008012980\Desktop\SE245\Week5\Lab5_Croteau\bin\Debug\Lab5_Croteau.exe
+C:\Users\008012980\Desktop\SE245\Week5\Lab5_Croteau\bin\Debug\Lab5_Croteau.pdb
+C:\Users\008012980\Desktop\SE245\Week5\Lab5_Croteau\obj\Debug\Lab5_Croteau.csproj.AssemblyReference.cache
+C:\Users\008012980\Desktop\SE245\Week5\Lab5_Croteau\obj\Debug\Lab5_Croteau.Form1.resources
+C:\Users\008012980\Desktop\SE245\Week5\Lab5_Croteau\obj\Debug\Lab5_Croteau.Properties.Resources.resources
+C:\Users\008012980\Desktop\SE245\Week5\Lab5_Croteau\obj\Debug\Lab5_Croteau.csproj.GenerateResource.cache
+C:\Users\008012980\Desktop\SE245\Week5\Lab5_Croteau\obj\Debug\Lab5_Croteau.csproj.CoreCompileInputs.cache
+C:\Users\008012980\Desktop\SE245\Week5\Lab5_Croteau\obj\Debug\Lab5_Croteau.exe
+C:\Users\008012980\Desktop\SE245\Week5\Lab5_Croteau\obj\Debug\Lab5_Croteau.pdb

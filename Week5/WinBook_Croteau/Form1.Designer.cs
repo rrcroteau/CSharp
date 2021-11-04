@@ -29,6 +29,7 @@ namespace WinBook_Croteau
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.Button btnAdd;
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,7 +39,7 @@ namespace WinBook_Croteau
             this.txtLName = new System.Windows.Forms.TextBox();
             this.dtpDatePublished = new System.Windows.Forms.DateTimePicker();
             this.btnFillInForm = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
+            btnAdd = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -77,7 +78,6 @@ namespace WinBook_Croteau
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(468, 20);
             this.txtTitle.TabIndex = 4;
-            this.txtTitle.TextChanged += new System.EventHandler(this.txtTitle_TextChanged);
             // 
             // label4
             // 
@@ -124,22 +124,22 @@ namespace WinBook_Croteau
             // 
             // btnAdd
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.GreenYellow;
-            this.btnAdd.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnAdd.Location = new System.Drawing.Point(382, 358);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 9;
-            this.btnAdd.Text = "Submit";
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            btnAdd.BackColor = System.Drawing.Color.Black;
+            btnAdd.ForeColor = System.Drawing.Color.White;
+            btnAdd.Location = new System.Drawing.Point(372, 298);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new System.Drawing.Size(100, 50);
+            btnAdd.TabIndex = 9;
+            btnAdd.Text = "Add A Book";
+            btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(btnAdd);
             this.Controls.Add(this.btnFillInForm);
             this.Controls.Add(this.dtpDatePublished);
             this.Controls.Add(this.txtLName);
@@ -167,7 +167,6 @@ namespace WinBook_Croteau
         private System.Windows.Forms.TextBox txtLName;
         private System.Windows.Forms.DateTimePicker dtpDatePublished;
         private System.Windows.Forms.Button btnFillInForm;
-        private System.Windows.Forms.Button btnAdd;
     }
 }
 

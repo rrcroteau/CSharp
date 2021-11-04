@@ -14,10 +14,31 @@ namespace WinBook_Croteau
         private string feedback;
         private DateTime datePublished;
 
+        //Create constructor to initialize variables (so they are not NULL)
+        public Book()
+        {
+            title = "";
+            authFName = "";
+            authLName = "";
+            feedback = "";
+            datePublished = DateTime.Now;
+        }
+
         public string Title
         {
             get { return title;  }
-            set { title = value; }
+            set
+            {
+                if (Validator.IsEmpty(value) == false)
+                {
+                    title = value;
+                }
+
+                else 
+                {
+                    Feedback += "ERROR: Please enter a Title, this field cannot be empty.\n";
+                }
+            }
         }
 
         public string AuthFName

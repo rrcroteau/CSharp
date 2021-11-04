@@ -36,12 +36,18 @@ namespace WinBook_Croteau
             temp.AuthLName = txtLName.Text;
             temp.DatePublished = dtpDatePublished.Value;
 
-            MessageBox.Show(temp.Title + " written by " + temp.AuthFName + " " + temp.AuthLName + " on " + temp.DatePublished.ToShortDateString());
+            if (temp.Feedback.Contains("ERROR:"))
+            {
+                MessageBox.Show(temp.Feedback);
+            }
+
+            else
+            {
+                MessageBox.Show($"{ temp.Title} written by {temp.AuthFName} {temp.AuthLName} on {temp.DatePublished.ToShortDateString()}");
+            }
+
+            
         }
 
-        private void txtTitle_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
