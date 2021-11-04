@@ -51,6 +51,7 @@ namespace Lab5_Croteau
             this.txtZip = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
+            this.btnFillData = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -117,7 +118,7 @@ namespace Lab5_Croteau
             this.btnAddPerson.Location = new System.Drawing.Point(362, 477);
             this.btnAddPerson.Name = "btnAddPerson";
             this.btnAddPerson.Size = new System.Drawing.Size(133, 30);
-            this.btnAddPerson.TabIndex = 7;
+            this.btnAddPerson.TabIndex = 14;
             this.btnAddPerson.Text = "Add Person";
             this.btnAddPerson.UseVisualStyleBackColor = false;
             this.btnAddPerson.Click += new System.EventHandler(this.btnAddPerson_Click);
@@ -190,55 +191,68 @@ namespace Lab5_Croteau
             this.txtStreet1.Location = new System.Drawing.Point(291, 177);
             this.txtStreet1.Name = "txtStreet1";
             this.txtStreet1.Size = new System.Drawing.Size(274, 20);
-            this.txtStreet1.TabIndex = 15;
+            this.txtStreet1.TabIndex = 7;
             // 
             // txtStreet2
             // 
             this.txtStreet2.Location = new System.Drawing.Point(291, 222);
             this.txtStreet2.Name = "txtStreet2";
             this.txtStreet2.Size = new System.Drawing.Size(274, 20);
-            this.txtStreet2.TabIndex = 16;
+            this.txtStreet2.TabIndex = 8;
             // 
             // txtCity
             // 
             this.txtCity.Location = new System.Drawing.Point(291, 261);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(274, 20);
-            this.txtCity.TabIndex = 17;
+            this.txtCity.TabIndex = 9;
             // 
             // txtState
             // 
             this.txtState.Location = new System.Drawing.Point(291, 302);
             this.txtState.Name = "txtState";
-            this.txtState.Size = new System.Drawing.Size(274, 20);
-            this.txtState.TabIndex = 18;
+            this.txtState.Size = new System.Drawing.Size(23, 20);
+            this.txtState.TabIndex = 10;
             // 
             // txtZip
             // 
             this.txtZip.Location = new System.Drawing.Point(291, 342);
             this.txtZip.Name = "txtZip";
-            this.txtZip.Size = new System.Drawing.Size(274, 20);
-            this.txtZip.TabIndex = 19;
+            this.txtZip.Size = new System.Drawing.Size(37, 20);
+            this.txtZip.TabIndex = 11;
             // 
             // txtPhone
             // 
             this.txtPhone.Location = new System.Drawing.Point(291, 387);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(274, 20);
-            this.txtPhone.TabIndex = 20;
+            this.txtPhone.Size = new System.Drawing.Size(72, 20);
+            this.txtPhone.TabIndex = 12;
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(291, 432);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(274, 20);
-            this.txtEmail.TabIndex = 21;
+            this.txtEmail.TabIndex = 13;
+            // 
+            // btnFillData
+            // 
+            this.btnFillData.BackColor = System.Drawing.Color.DarkRed;
+            this.btnFillData.ForeColor = System.Drawing.Color.White;
+            this.btnFillData.Location = new System.Drawing.Point(586, 336);
+            this.btnFillData.Name = "btnFillData";
+            this.btnFillData.Size = new System.Drawing.Size(133, 30);
+            this.btnFillData.TabIndex = 15;
+            this.btnFillData.Text = "Fill All Fields";
+            this.btnFillData.UseVisualStyleBackColor = false;
+            this.btnFillData.Click += new System.EventHandler(this.btnFillData_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(869, 659);
+            this.ClientSize = new System.Drawing.Size(819, 659);
+            this.Controls.Add(this.btnFillData);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.txtZip);
@@ -262,7 +276,7 @@ namespace Lab5_Croteau
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Enter New Person";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -292,6 +306,7 @@ namespace Lab5_Croteau
         private System.Windows.Forms.TextBox txtZip;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Button btnFillData;
     }
 }
 
