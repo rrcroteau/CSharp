@@ -212,7 +212,7 @@ namespace Lab5_Croteau
 
             set
             {
-                if (Validator.IsMinLength(value, 1))
+                if (Validator.IsMinLength(value, 8))
                 {
                     email = value;
                 }
