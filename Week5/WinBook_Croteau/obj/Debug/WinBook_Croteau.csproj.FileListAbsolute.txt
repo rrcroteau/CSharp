@@ -11,7 +11,6 @@ C:\Users\008012980\Desktop\SE245\Week5\W5_Demo\WinBook_Croteau\obj\Debug\WinBook
 C:\Users\008012980\Desktop\SE245\Week5\WinBook_Croteau\bin\Debug\WinBook_Croteau.exe.config
 C:\Users\008012980\Desktop\SE245\Week5\WinBook_Croteau\bin\Debug\WinBook_Croteau.exe
 C:\Users\008012980\Desktop\SE245\Week5\WinBook_Croteau\bin\Debug\WinBook_Croteau.pdb
-C:\Users\008012980\Desktop\SE245\Week5\WinBook_Croteau\obj\Debug\WinBook_Croteau.csproj.AssemblyReference.cache
 C:\Users\008012980\Desktop\SE245\Week5\WinBook_Croteau\obj\Debug\WinBook_Croteau.Form1.resources
 C:\Users\008012980\Desktop\SE245\Week5\WinBook_Croteau\obj\Debug\WinBook_Croteau.Properties.Resources.resources
 C:\Users\008012980\Desktop\SE245\Week5\WinBook_Croteau\obj\Debug\WinBook_Croteau.csproj.GenerateResource.cache

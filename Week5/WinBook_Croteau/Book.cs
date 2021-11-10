@@ -11,8 +11,12 @@ namespace WinBook_Croteau
         private string title;
         private string authFName;
         private string authLName;
-        private string feedback;
+        private string email;
         private DateTime datePublished;
+        private int pages;
+        private double price;
+
+        protected string feedback; //protected, so only children can see it
 
         //Create constructor to initialize variables (so they are not NULL)
         public Book()
@@ -20,8 +24,10 @@ namespace WinBook_Croteau
             title = "";
             authFName = "";
             authLName = "";
+            pages = 0;
+            datePublished = DateTime.Parse("1/1/1500");
+            price = 0.0;
             feedback = "";
-            datePublished = DateTime.Now;
         }
 
         public string Title
@@ -29,14 +35,14 @@ namespace WinBook_Croteau
             get { return title;  }
             set
             {
-                if (Validator.IsEmpty(value) == false)
+                if (!Validator.IsEmpty(value) && !Validator.GotBadWords(value))
                 {
                     title = value;
                 }
 
                 else 
                 {
-                    Feedback += "ERROR: Please enter a Title, this field cannot be empty.\n";
+                    feedback += "\nERROR: Please enter a Title, this field cannot be empty or have bad words.";
                 }
             }
         }
@@ -44,7 +50,18 @@ namespace WinBook_Croteau
         public string AuthFName
         {
             get { return authFName; }
-            set { authFName = value; }
+            set
+            {
+                if (!Validator.IsEmpty(value) && !Validator.GotBadWords(value))
+                {
+                    authFName = value;
+                }
+
+                else
+                {
+                    feedback += "\nERROR: Please enter a First Name, this field cannot be empty or have bad words.";
+                }
+            }
         }
 
         public string AuthLName
@@ -53,16 +70,74 @@ namespace WinBook_Croteau
             set { authLName = value; }
         }
 
-        public string Feedback
+        public string Email
         {
-            get { return feedback; }
-            set { feedback = value; }
+            get { return email; }
+            set
+            {
+                if (Validator.IsValidEmail(value))
+                {
+                    email = value;
+                }
+                else
+                {
+                    feedback += "\nERROR: Please enter a valid Email address.";
+                }
+            }
         }
 
         public DateTime DatePublished
         {
             get { return datePublished; }
-            set { datePublished = value; }
+            set
+            {
+                if (!Validator.IsFutureDate(value))
+                {
+                    datePublished = value;
+                }
+                else
+                {
+                    feedback += "\nERROR: You cannot enter future dates.";
+                }
+            }
+        }
+
+        public int Pages
+        {
+            get { return pages; }
+            set
+            {
+                if (Validator.IsMinValue(value, 1))
+                {
+                    pages = value;
+                }
+                else
+                {
+                    feedback += "\nERROR: Sorry, you entered an invalid number of pages.";
+                }
+            }
+        }
+
+        public double Price
+        {
+            get { return price; }
+            set
+            {
+                if (Validator.IsMinValue(value, 1))
+                {
+                    price = value;
+                }
+                else
+                {
+                    feedback += "\nERROR: Sorry, you entered an invalid price.";
+                }
+            }
+        }
+
+        public string Feedback
+        {
+            get { return feedback; }
+            //set { feedback = value; } 
         }
     }
 }
