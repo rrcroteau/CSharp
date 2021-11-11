@@ -97,7 +97,7 @@ namespace WinBook_Croteau
                 }
                 else
                 {
-                    feedback += "\nERROR: You cannot enter future dates.";
+                    feedback += "\nERROR: You cannot enter future dates for the date published.";
                 }
             }
         }
@@ -111,6 +111,7 @@ namespace WinBook_Croteau
                 {
                     pages = value;
                 }
+
                 else
                 {
                     feedback += "\nERROR: Sorry, you entered an invalid number of pages.";
@@ -137,7 +138,7 @@ namespace WinBook_Croteau
         public string Feedback
         {
             get { return feedback; }
-            //set { feedback = value; } 
+            //set { feedback = value; } does not need a SET as it is a protected variable and thereby accessible by derived classes
         }
     }
 }

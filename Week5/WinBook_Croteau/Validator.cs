@@ -62,8 +62,8 @@ namespace WinBook_Croteau
             //find the location of the last period in the address
             int periodLocation = temp.LastIndexOf(".");
 
-            //check for min length  -- this is based on a 1 @ 1 . 2 format for email
-            if (temp.Length < 5)
+            //check for min length  -- this is based on a 1 @ 1 . 2 format for email for a length of 6
+            if (temp.Length < 6)
             {
                 blnResult = false;
             }
@@ -78,12 +78,12 @@ namespace WinBook_Croteau
                 blnResult = false;
             }
 
-            else if ((periodLocation - atLocation) < 1) //verifies at least 1 char between "@" and final "."
+            else if ((periodLocation - atLocation) <= 1) //verifies at least 1 char between "@" and final "." index 5 - index 4 (nothing in between) would be 1... so anything <= to that
             {
                 blnResult = false;
             }
 
-            else if ((periodLocation + 2) > (temp.Length)) //verifies at least 2 char after the final "."
+            else if ((periodLocation + 3) > (temp.Length)) //verifies at least 2 char after the final "."
             {
                 blnResult = false;
             }

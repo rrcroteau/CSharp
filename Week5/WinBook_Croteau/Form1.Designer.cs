@@ -71,7 +71,7 @@ namespace WinBook_Croteau
             this.label1.Location = new System.Drawing.Point(188, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(42, 20);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 99;
             this.label1.Text = "Title:";
             // 
             // label2
@@ -81,7 +81,7 @@ namespace WinBook_Croteau
             this.label2.Location = new System.Drawing.Point(77, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(153, 20);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 99;
             this.label2.Text = "Author\'s First Name:";
             // 
             // label3
@@ -91,7 +91,7 @@ namespace WinBook_Croteau
             this.label3.Location = new System.Drawing.Point(77, 127);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(153, 20);
-            this.label3.TabIndex = 2;
+            this.label3.TabIndex = 99;
             this.label3.Text = "Author\'s Last Name:";
             // 
             // txtTitle
@@ -108,7 +108,7 @@ namespace WinBook_Croteau
             this.label4.Location = new System.Drawing.Point(109, 273);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(121, 20);
-            this.label4.TabIndex = 3;
+            this.label4.TabIndex = 99;
             this.label4.Text = "Date Published:";
             // 
             // txtFName
@@ -139,7 +139,7 @@ namespace WinBook_Croteau
             this.btnFillInForm.Location = new System.Drawing.Point(241, 415);
             this.btnFillInForm.Name = "btnFillInForm";
             this.btnFillInForm.Size = new System.Drawing.Size(75, 23);
-            this.btnFillInForm.TabIndex = 8;
+            this.btnFillInForm.TabIndex = 25;
             this.btnFillInForm.Text = "Fill In Form";
             this.btnFillInForm.UseVisualStyleBackColor = false;
             this.btnFillInForm.Click += new System.EventHandler(this.btnFillInForm_Click);
@@ -151,7 +151,7 @@ namespace WinBook_Croteau
             this.label5.Location = new System.Drawing.Point(115, 177);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(115, 20);
-            this.label5.TabIndex = 10;
+            this.label5.TabIndex = 99;
             this.label5.Text = "Author\'s Email:";
             // 
             // txtEmail
@@ -168,7 +168,7 @@ namespace WinBook_Croteau
             this.label6.Location = new System.Drawing.Point(159, 223);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(71, 20);
-            this.label6.TabIndex = 12;
+            this.label6.TabIndex = 99;
             this.label6.Text = "# Pages:";
             // 
             // txtPages
@@ -192,7 +192,7 @@ namespace WinBook_Croteau
             this.label7.Location = new System.Drawing.Point(605, 273);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(101, 20);
-            this.label7.TabIndex = 14;
+            this.label7.TabIndex = 99;
             this.label7.Text = "Return Date:";
             // 
             // txtBookmarkPage
@@ -210,7 +210,7 @@ namespace WinBook_Croteau
             this.label8.Location = new System.Drawing.Point(91, 323);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(139, 20);
-            this.label8.TabIndex = 16;
+            this.label8.TabIndex = 99;
             this.label8.Text = "Bookmark Page #:";
             // 
             // chkMembership

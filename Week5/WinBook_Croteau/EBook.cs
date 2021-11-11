@@ -33,7 +33,7 @@ namespace WinBook_Croteau
                 else
                 {
                     //past date, give error
-                    feedback += "\nERROR: You must enter a future date.";
+                    feedback += "\nERROR: You must enter a future date for the date the rental expires.";
                 }
             }
         }

@@ -19,9 +19,9 @@ namespace WinBook_Croteau
 
         private void btnFillInForm_Click(object sender, EventArgs e)
         {
-            txtTitle.Text = "Guide to Me";
+            txtTitle.Text = "Hey, it's a Book";
             txtFName.Text = "Joe";
-            txtLName.Text = "Mama";
+            txtLName.Text = "Duffy";
             txtEmail.Text = "me@myemail.co";
             txtPages.Text = "70";
             dtpDatePublished.Value = DateTime.Now;
@@ -46,9 +46,9 @@ namespace WinBook_Croteau
 
             //convert the string values of # to ints for validation/storage
             int intTempPages;
-            bool blnResult = Int32.TryParse(txtPages.Text, out intTempPages);
+            bool blnResult1 = Int32.TryParse(txtPages.Text, out intTempPages);
 
-            if (blnResult == false)
+            if (blnResult1 == false)
             {
                 lblFeedback.Text += "\nSorry, incorrect page #. Please try again. (ex. 214)";
             }
@@ -59,9 +59,9 @@ namespace WinBook_Croteau
             }
 
             int intBMPage;
-            blnResult = Int32.TryParse(txtBookmarkPage.Text, out intBMPage);
+            bool blnResult2 = Int32.TryParse(txtBookmarkPage.Text, out intBMPage);
 
-            if (blnResult == false)
+            if (blnResult2 == false)
             {
                 lblFeedback.Text += "\nSorry, incorrect bookmark page #. Please try again. (ex. 214)";
             }
@@ -78,7 +78,18 @@ namespace WinBook_Croteau
 
             else
             {
-                lblFeedback.Text = ($"Record Stored: { temp.Title} written by {temp.AuthFName} {temp.AuthLName} on {temp.DatePublished.ToShortDateString()}");
+                lblFeedback.Text = ($"Record Stored: {temp.Title} written by {temp.AuthFName} {temp.AuthLName} on {temp.DatePublished.ToShortDateString()}\n" +
+                                    $"Author's Email: {temp.Email} | # of pages: {temp.Pages} | Bookmark page: {temp.BookmarkPage} | Rental Expires: {temp.DateRentalExpires.ToShortDateString()}");
+                
+                if (chkMembership.Checked)
+                {
+                    lblFeedback.Text += "\nMembership Status: Active";
+                }
+
+                else
+                {
+                    lblFeedback.Text += "\nMembership Status: Inactive";
+                }
             }
 
 
