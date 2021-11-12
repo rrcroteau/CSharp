@@ -56,6 +56,14 @@ namespace Lab5_Croteau
             this.label11 = new System.Windows.Forms.Label();
             this.txtInstagramURL = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.dtpCustomerSince = new System.Windows.Forms.DateTimePicker();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtTotalPurchases = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.chkDiscountMember = new System.Windows.Forms.CheckBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtRewardsEarned = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -88,7 +96,7 @@ namespace Lab5_Croteau
             // lblFeedback
             // 
             this.lblFeedback.AutoSize = true;
-            this.lblFeedback.Location = new System.Drawing.Point(288, 469);
+            this.lblFeedback.Location = new System.Drawing.Point(288, 473);
             this.lblFeedback.Name = "lblFeedback";
             this.lblFeedback.Size = new System.Drawing.Size(55, 13);
             this.lblFeedback.TabIndex = 3;
@@ -98,31 +106,31 @@ namespace Lab5_Croteau
             // 
             this.txtFName.Location = new System.Drawing.Point(291, 12);
             this.txtFName.Name = "txtFName";
-            this.txtFName.Size = new System.Drawing.Size(274, 20);
+            this.txtFName.Size = new System.Drawing.Size(288, 20);
             this.txtFName.TabIndex = 4;
             // 
             // txtMName
             // 
             this.txtMName.Location = new System.Drawing.Point(291, 38);
             this.txtMName.Name = "txtMName";
-            this.txtMName.Size = new System.Drawing.Size(274, 20);
+            this.txtMName.Size = new System.Drawing.Size(288, 20);
             this.txtMName.TabIndex = 5;
             // 
             // txtLName
             // 
             this.txtLName.Location = new System.Drawing.Point(291, 64);
             this.txtLName.Name = "txtLName";
-            this.txtLName.Size = new System.Drawing.Size(274, 20);
+            this.txtLName.Size = new System.Drawing.Size(288, 20);
             this.txtLName.TabIndex = 6;
             // 
             // btnAddPerson
             // 
             this.btnAddPerson.BackColor = System.Drawing.Color.Black;
             this.btnAddPerson.ForeColor = System.Drawing.Color.White;
-            this.btnAddPerson.Location = new System.Drawing.Point(364, 416);
+            this.btnAddPerson.Location = new System.Drawing.Point(344, 422);
             this.btnAddPerson.Name = "btnAddPerson";
             this.btnAddPerson.Size = new System.Drawing.Size(133, 30);
-            this.btnAddPerson.TabIndex = 16;
+            this.btnAddPerson.TabIndex = 21;
             this.btnAddPerson.Text = "Add Person";
             this.btnAddPerson.UseVisualStyleBackColor = false;
             this.btnAddPerson.Click += new System.EventHandler(this.btnAddPerson_Click);
@@ -194,21 +202,21 @@ namespace Lab5_Croteau
             // 
             this.txtStreet1.Location = new System.Drawing.Point(291, 90);
             this.txtStreet1.Name = "txtStreet1";
-            this.txtStreet1.Size = new System.Drawing.Size(274, 20);
+            this.txtStreet1.Size = new System.Drawing.Size(288, 20);
             this.txtStreet1.TabIndex = 7;
             // 
             // txtStreet2
             // 
             this.txtStreet2.Location = new System.Drawing.Point(291, 116);
             this.txtStreet2.Name = "txtStreet2";
-            this.txtStreet2.Size = new System.Drawing.Size(274, 20);
+            this.txtStreet2.Size = new System.Drawing.Size(288, 20);
             this.txtStreet2.TabIndex = 8;
             // 
             // txtCity
             // 
             this.txtCity.Location = new System.Drawing.Point(291, 142);
             this.txtCity.Name = "txtCity";
-            this.txtCity.Size = new System.Drawing.Size(274, 20);
+            this.txtCity.Size = new System.Drawing.Size(288, 20);
             this.txtCity.TabIndex = 9;
             // 
             // txtState
@@ -236,17 +244,17 @@ namespace Lab5_Croteau
             // 
             this.txtEmail.Location = new System.Drawing.Point(291, 272);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(274, 20);
+            this.txtEmail.Size = new System.Drawing.Size(288, 20);
             this.txtEmail.TabIndex = 14;
             // 
             // btnFillData
             // 
             this.btnFillData.BackColor = System.Drawing.Color.DarkRed;
             this.btnFillData.ForeColor = System.Drawing.Color.White;
-            this.btnFillData.Location = new System.Drawing.Point(133, 416);
+            this.btnFillData.Location = new System.Drawing.Point(157, 422);
             this.btnFillData.Name = "btnFillData";
             this.btnFillData.Size = new System.Drawing.Size(133, 30);
-            this.btnFillData.TabIndex = 17;
+            this.btnFillData.TabIndex = 22;
             this.btnFillData.Text = "Fill All Fields";
             this.btnFillData.UseVisualStyleBackColor = false;
             this.btnFillData.Click += new System.EventHandler(this.btnFillData_Click);
@@ -271,7 +279,7 @@ namespace Lab5_Croteau
             // 
             this.txtInstagramURL.Location = new System.Drawing.Point(291, 298);
             this.txtInstagramURL.Name = "txtInstagramURL";
-            this.txtInstagramURL.Size = new System.Drawing.Size(274, 20);
+            this.txtInstagramURL.Size = new System.Drawing.Size(288, 20);
             this.txtInstagramURL.TabIndex = 15;
             this.txtInstagramURL.Text = "instagram.com/enter handle here";
             // 
@@ -284,11 +292,88 @@ namespace Lab5_Croteau
             this.label12.TabIndex = 99;
             this.label12.Text = "Instagram URL:";
             // 
+            // dtpCustomerSince
+            // 
+            this.dtpCustomerSince.Location = new System.Drawing.Point(291, 324);
+            this.dtpCustomerSince.Name = "dtpCustomerSince";
+            this.dtpCustomerSince.Size = new System.Drawing.Size(200, 20);
+            this.dtpCustomerSince.TabIndex = 16;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(185, 331);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(84, 13);
+            this.label13.TabIndex = 101;
+            this.label13.Text = "Customer Since:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(179, 357);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(87, 13);
+            this.label14.TabIndex = 102;
+            this.label14.Text = "Total Purchases:";
+            // 
+            // txtTotalPurchases
+            // 
+            this.txtTotalPurchases.Location = new System.Drawing.Point(291, 350);
+            this.txtTotalPurchases.Name = "txtTotalPurchases";
+            this.txtTotalPurchases.Size = new System.Drawing.Size(72, 20);
+            this.txtTotalPurchases.TabIndex = 17;
+            this.txtTotalPurchases.Text = "0.00";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(277, 353);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(13, 13);
+            this.label15.TabIndex = 103;
+            this.label15.Text = "$";
+            // 
+            // chkDiscountMember
+            // 
+            this.chkDiscountMember.AutoSize = true;
+            this.chkDiscountMember.Location = new System.Drawing.Point(291, 376);
+            this.chkDiscountMember.Name = "chkDiscountMember";
+            this.chkDiscountMember.Size = new System.Drawing.Size(115, 17);
+            this.chkDiscountMember.TabIndex = 18;
+            this.chkDiscountMember.Text = "Discount Member?";
+            this.chkDiscountMember.UseVisualStyleBackColor = true;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(412, 377);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(89, 13);
+            this.label16.TabIndex = 104;
+            this.label16.Text = "Rewards Earned:";
+            // 
+            // txtRewardsEarned
+            // 
+            this.txtRewardsEarned.Location = new System.Drawing.Point(507, 370);
+            this.txtRewardsEarned.Name = "txtRewardsEarned";
+            this.txtRewardsEarned.Size = new System.Drawing.Size(72, 20);
+            this.txtRewardsEarned.TabIndex = 19;
+            this.txtRewardsEarned.Text = "0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(819, 659);
+            this.Controls.Add(this.txtRewardsEarned);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.chkDiscountMember);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.txtTotalPurchases);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.dtpCustomerSince);
             this.Controls.Add(this.txtInstagramURL);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.txtCellPhone);
@@ -352,6 +437,14 @@ namespace Lab5_Croteau
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtInstagramURL;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DateTimePicker dtpCustomerSince;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtTotalPurchases;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.CheckBox chkDiscountMember;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txtRewardsEarned;
     }
 }
 

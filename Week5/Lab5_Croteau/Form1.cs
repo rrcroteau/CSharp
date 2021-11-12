@@ -20,20 +20,22 @@ namespace Lab5_Croteau
         private void btnAddPerson_Click(object sender, EventArgs e)
         {
             //Build or Construct an instance of a person called Temp
-            Person temp = new Person
+            PersonV2 temp = new PersonV2
             {
 
                 //collect data from form to fill in person
-                FName = txtFName.Text,
-                MName = txtMName.Text,
-                LName = txtLName.Text,
-                Street1 = txtStreet1.Text,
-                Street2 = txtStreet2.Text,
-                City = txtCity.Text,
-                State = txtState.Text,
+                FName = txtFName.Text.ToUpper(),
+                MName = txtMName.Text.ToUpper(),
+                LName = txtLName.Text.ToUpper(),
+                Street1 = txtStreet1.Text.ToUpper(),
+                Street2 = txtStreet2.Text.ToUpper(),
+                City = txtCity.Text.ToUpper(),
+                State = txtState.Text.ToUpper(),
                 Zip = txtZip.Text,
                 Phone = txtPhone.Text,
-                Email = txtEmail.Text
+                CellPhone = txtCellPhone.Text,
+                Email = txtEmail.Text,
+                InstagramURL = txtInstagramURL.Text
             };
 
             if (temp.Feedback.Contains("ERROR:"))
@@ -50,8 +52,9 @@ namespace Lab5_Croteau
                     lblFeedback.Text = $"{temp.FName} {temp.LName}\n" +
                                        $"{temp.Street1}\n" +
                                        $"{temp.City}, {temp.State} {temp.Zip}\n" +
-                                       $"\n{temp.Phone} | {temp.Email}\n" +
-                                       $"\n\n The person above was added.";
+                                       $"Phone: {temp.Phone} | Cell: {temp.CellPhone}\n" +
+                                       $"{temp.Email} | {temp.InstagramURL}\n" +
+                                       $"\n The person above was added.";
                 }
 
                 else if (temp.MName == "")
@@ -61,8 +64,9 @@ namespace Lab5_Croteau
                                        $"{temp.Street1}\n" +
                                        $"{temp.Street2}\n" +
                                        $"{temp.City}, {temp.State} {temp.Zip}\n" +
-                                       $"\n{temp.Phone} | {temp.Email}\n" +
-                                       $"\n\n The person above was added.";
+                                       $"Phone: {temp.Phone} | Cell: {temp.CellPhone}\n" +
+                                       $"{temp.Email} | {temp.InstagramURL}\n" +
+                                       $"\n The person above was added.";
                 }
 
                 else if (temp.Street2 == "")
@@ -71,8 +75,9 @@ namespace Lab5_Croteau
                     lblFeedback.Text = $"{temp.FName} {temp.MName} {temp.LName}\n" +
                                        $"{temp.Street1}\n" +
                                        $"{temp.City}, {temp.State} {temp.Zip}\n" +
-                                       $"\n{temp.Phone} | {temp.Email}\n" +
-                                       $"\n\n The person above was added.";
+                                       $"Phone: {temp.Phone} | Cell: {temp.CellPhone}\n" +
+                                       $"{temp.Email} | {temp.InstagramURL}\n" +
+                                       $"\n The person above was added.";
                 }
 
                 else 
@@ -82,8 +87,9 @@ namespace Lab5_Croteau
                                        $"{temp.Street1}\n" +
                                        $"{temp.Street2}\n" +
                                        $"{temp.City}, {temp.State} {temp.Zip}\n" +
-                                       $"\n{temp.Phone} | {temp.Email}\n" +
-                                       $"\n\n The person above was added.";
+                                       $"Phone: {temp.Phone} | Cell: {temp.CellPhone}\n" +
+                                       $"{temp.Email} | {temp.InstagramURL}\n" +
+                                       $"\n The person above was added.";
                 }
          
             }
@@ -101,7 +107,10 @@ namespace Lab5_Croteau
             txtState.Text = "RI";
             txtZip.Text = "99999";
             txtPhone.Text = "1234567890";
+            txtCellPhone.Text = "0987654321";
             txtEmail.Text = "me@mail.edu";
+            txtInstagramURL.Text = "instagram.com/itsRonC";
         }
+
     }
 }
