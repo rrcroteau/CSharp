@@ -49,6 +49,9 @@ namespace WinBook_Croteau
             this.label8 = new System.Windows.Forms.Label();
             this.chkMembership = new System.Windows.Forms.CheckBox();
             this.lblFeedback = new System.Windows.Forms.Label();
+            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             btnAdd = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -59,7 +62,7 @@ namespace WinBook_Croteau
             btnAdd.Location = new System.Drawing.Point(409, 401);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new System.Drawing.Size(100, 50);
-            btnAdd.TabIndex = 13;
+            btnAdd.TabIndex = 14;
             btnAdd.Text = "Add A Book";
             btnAdd.UseVisualStyleBackColor = false;
             btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -183,13 +186,13 @@ namespace WinBook_Croteau
             this.dtpDateRentalExpires.Location = new System.Drawing.Point(737, 273);
             this.dtpDateRentalExpires.Name = "dtpDateRentalExpires";
             this.dtpDateRentalExpires.Size = new System.Drawing.Size(200, 20);
-            this.dtpDateRentalExpires.TabIndex = 11;
+            this.dtpDateRentalExpires.TabIndex = 10;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(605, 273);
+            this.label7.Location = new System.Drawing.Point(619, 274);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(101, 20);
             this.label7.TabIndex = 99;
@@ -200,7 +203,7 @@ namespace WinBook_Croteau
             this.txtBookmarkPage.Location = new System.Drawing.Point(241, 323);
             this.txtBookmarkPage.Name = "txtBookmarkPage";
             this.txtBookmarkPage.Size = new System.Drawing.Size(75, 20);
-            this.txtBookmarkPage.TabIndex = 10;
+            this.txtBookmarkPage.TabIndex = 11;
             this.txtBookmarkPage.Text = "0";
             // 
             // label8
@@ -232,11 +235,42 @@ namespace WinBook_Croteau
             this.lblFeedback.Size = new System.Drawing.Size(0, 20);
             this.lblFeedback.TabIndex = 17;
             // 
+            // txtPrice
+            // 
+            this.txtPrice.Location = new System.Drawing.Point(241, 369);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(75, 20);
+            this.txtPrice.TabIndex = 13;
+            this.txtPrice.Text = "0";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(182, 369);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(48, 20);
+            this.label9.TabIndex = 101;
+            this.label9.Text = "Price:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(223, 369);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(18, 20);
+            this.label10.TabIndex = 102;
+            this.label10.Text = "$";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(995, 689);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.txtPrice);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.lblFeedback);
             this.Controls.Add(this.chkMembership);
             this.Controls.Add(this.txtBookmarkPage);
@@ -285,6 +319,9 @@ namespace WinBook_Croteau
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.CheckBox chkMembership;
         private System.Windows.Forms.Label lblFeedback;
+        private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
     }
 }
 

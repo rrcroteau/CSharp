@@ -27,3 +27,4 @@ C:\Users\Ronald\Desktop\SE245\Week5\WinBook_Croteau\obj\Debug\WinBook_Croteau.cs
 C:\Users\Ronald\Desktop\SE245\Week5\WinBook_Croteau\obj\Debug\WinBook_Croteau.csproj.CoreCompileInputs.cache
 C:\Users\Ronald\Desktop\SE245\Week5\WinBook_Croteau\obj\Debug\WinBook_Croteau.exe
 C:\Users\Ronald\Desktop\SE245\Week5\WinBook_Croteau\obj\Debug\WinBook_Croteau.pdb
+C:\Users\008012980\Desktop\SE245\Week5\WinBook_Croteau\obj\Debug\WinBook_Croteau.csproj.AssemblyReference.cache

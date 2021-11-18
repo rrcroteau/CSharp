@@ -27,6 +27,7 @@ namespace WinBook_Croteau
             dtpDatePublished.Value = DateTime.Now;
             txtBookmarkPage.Text = "0";
             dtpDateRentalExpires.Value = DateTime.Now.AddDays(14);
+            txtPrice.Text = "9.99";
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -71,25 +72,29 @@ namespace WinBook_Croteau
                 temp.BookmarkPage = intBMPage;
             }
 
-            if (temp.Feedback.Contains("ERROR:"))
+            //convert the string values of # to double for validation/storage
+            double dblTempPrice;
+            bool blnResult3 = Double.TryParse(txtPrice.Text, out dblTempPrice);
+
+            if (blnResult3 == false)
             {
-                lblFeedback.Text += temp.Feedback;    
+                lblFeedback.Text += "\nPlease enter a positive amount for Price (ex:  9.99)";
             }
 
             else
             {
-                lblFeedback.Text = ($"Record Stored: {temp.Title} written by {temp.AuthFName} {temp.AuthLName} on {temp.DatePublished.ToShortDateString()}\n" +
-                                    $"Author's Email: {temp.Email} | # of pages: {temp.Pages} | Bookmark page: {temp.BookmarkPage} | Rental Expires: {temp.DateRentalExpires.ToShortDateString()}");
-                
-                if (chkMembership.Checked)
-                {
-                    lblFeedback.Text += "\nMembership Status: Active";
-                }
+                temp.Price = dblTempPrice;
+            }
 
-                else
-                {
-                    lblFeedback.Text += "\nMembership Status: Inactive";
-                }
+            if (temp.Feedback.Contains("ERROR:"))
+            {
+                lblFeedback.Text += temp.Feedback;
+            }
+
+            else
+            {
+                lblFeedback.Text = temp.AddARecord();
+                
             }
 
 
