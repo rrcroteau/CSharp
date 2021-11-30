@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinBook_Croteau
+namespace Week7_Sample3_WindowsVersion
 {
     static class Program
     {

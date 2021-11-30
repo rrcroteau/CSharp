@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6C6BA286-A001-48F7-99F5-3CB2B15DE0DE}</ProjectGuid>
+    <ProjectGuid>{29EFA578-5B7C-465E-8D06-FCED90EE2A2A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WinBook_Croteau</RootNamespace>
-    <AssemblyName>WinBook_Croteau</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Week7_Sample3_WindowsVersion</RootNamespace>
+    <AssemblyName>Week7_Sample3_WindowsVersion</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -68,7 +68,7 @@
     <Compile Include="SearchMgr.Designer.cs">
       <DependentUpon>SearchMgr.cs</DependentUpon>
     </Compile>
-    <Compile Include="Validator.cs" />
+    <Compile Include="ValidationLibrary.cs" />
     <EmbeddedResource Include="ControlPanel.resx">
       <DependentUpon>ControlPanel.cs</DependentUpon>
     </EmbeddedResource>
@@ -101,4 +101,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
 </Project>
