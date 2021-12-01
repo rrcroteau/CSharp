@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace WinBook_Croteau
 {
@@ -16,6 +17,44 @@ namespace WinBook_Croteau
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// NEW - Constructor that Receives an EBook ID....this means we need to look up the data and populate fields (View/Edit/Del)
+        /// </summary>
+        /// <param name="intEBook_ID"></param>
+        public Form1(int intEBook_ID)
+        {
+            InitializeComponent();  //Creates and init's all form objects
+
+            //Gather info about this one person and store it in a datareader
+            EBook temp = new EBook();
+            SqlDataReader dr = temp.FindOneEBook(intEBook_ID);
+
+            //Use that info to fill out the form
+            //Loop thru the records stored in the reader 1 record at a time
+            // Note that since this is based on one person's ID, then we
+            //  should only have one record
+            while (dr.Read())
+            {
+                //Take the Name(s) from the datareader and copy them
+                // into the appropriate text fields
+                txtTitle.Text = dr["Title"].ToString();
+                txtFName.Text = dr["AuthorFirst"].ToString();
+                txtLName.Text = dr["AuthorLast"].ToString();
+                txtEmail.Text = dr["Email"].ToString();
+                txtPages.Text = dr["Pages"].ToString();
+                txtBookmarkPage.Text = dr["BookmarkPage"].ToString();
+
+                dtpDatePublished.Value = DateTime.Parse(dr["DatePublished"].ToString());
+                dtpDateRentalExpires.Value = DateTime.Parse(dr["DateRentalExpires"].ToString());
+
+                //We added this one to store the ID in a new label
+                lblEBook_ID.Text += dr["EBook_ID"].ToString();
+            }
+
+
+        }
+
 
         private void btnFillInForm_Click(object sender, EventArgs e)
         {

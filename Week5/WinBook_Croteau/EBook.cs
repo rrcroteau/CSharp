@@ -123,7 +123,7 @@ namespace WinBook_Croteau
         //**************************************************************************************
         //  NEW - Part one of drill-down search (Takes search params to narrow the search results
         //**************************************************************************************
-        public DataSet SearchEBooks(String strTitle, String strAuthorLast)
+        public DataSet SearchEBooks(String strTitle, String strAuthorLast, String strEBookID)
         {
             //Create a dataset to return filled
             DataSet ds = new DataSet();
@@ -146,6 +146,11 @@ namespace WinBook_Croteau
             {
                 strSQL += " AND AuthorLast LIKE @AuthorLast";
                 comm.Parameters.AddWithValue("@AuthorLast", "%" + strAuthorLast + "%");
+            }
+            if (strEBookID.Length > 0)
+            {
+                strSQL += " AND EBook_ID LIKE @EBook_ID";
+                comm.Parameters.AddWithValue("@EBook_ID", "%" + strEBookID + "%");
             }
 
 
@@ -174,7 +179,7 @@ namespace WinBook_Croteau
             //Return the data
             return ds;
         }
-        /*
+        
         //NEW  - Method that returns a Data Reader filled with all the data
         // of one EBook.  This one EBook is specified by the ID passed
         // to this function
@@ -205,7 +210,7 @@ namespace WinBook_Croteau
             //Return some form of feedback
             return comm.ExecuteReader();   //Return the dataset to be used by others (the calling form)
 
-        }*/
+        }
 
         //**************************************************************************************
         //  NEW - Utility function so that one string controls all SQL Server Login info

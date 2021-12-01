@@ -35,6 +35,8 @@ namespace WinBook_Croteau
             this.label2 = new System.Windows.Forms.Label();
             this.BtnSearch = new System.Windows.Forms.Button();
             this.dgvResults = new System.Windows.Forms.DataGridView();
+            this.txtEBookID = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,7 +74,7 @@ namespace WinBook_Croteau
             // 
             // BtnSearch
             // 
-            this.BtnSearch.Location = new System.Drawing.Point(339, 98);
+            this.BtnSearch.Location = new System.Drawing.Point(531, 104);
             this.BtnSearch.Name = "BtnSearch";
             this.BtnSearch.Size = new System.Drawing.Size(125, 44);
             this.BtnSearch.TabIndex = 2;
@@ -85,14 +87,33 @@ namespace WinBook_Croteau
             this.dgvResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvResults.Location = new System.Drawing.Point(1, 196);
             this.dgvResults.Name = "dgvResults";
-            this.dgvResults.Size = new System.Drawing.Size(799, 256);
+            this.dgvResults.Size = new System.Drawing.Size(1180, 367);
             this.dgvResults.TabIndex = 104;
+            this.dgvResults.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvResults_CellDoubleClick);
+            // 
+            // txtEBookID
+            // 
+            this.txtEBookID.Location = new System.Drawing.Point(865, 34);
+            this.txtEBookID.Name = "txtEBookID";
+            this.txtEBookID.Size = new System.Drawing.Size(212, 20);
+            this.txtEBookID.TabIndex = 105;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(803, 37);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 13);
+            this.label3.TabIndex = 106;
+            this.label3.Text = "EBook ID:";
             // 
             // SearchMgr
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1182, 562);
+            this.Controls.Add(this.txtEBookID);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.dgvResults);
             this.Controls.Add(this.BtnSearch);
             this.Controls.Add(this.txtAuthorLast);
@@ -115,5 +136,7 @@ namespace WinBook_Croteau
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button BtnSearch;
         private System.Windows.Forms.DataGridView dgvResults;
+        private System.Windows.Forms.TextBox txtEBookID;
+        private System.Windows.Forms.Label label3;
     }
 }
