@@ -34,8 +34,8 @@ namespace Lab6_Croteau
             //Gather the information (Gathers the row clicked, then chooses the first cell's data
             string strPersonID = dgvResults.Rows[e.RowIndex].Cells[0].Value.ToString();
 
-            //Display data in Pop-up
-            MessageBox.Show(strPersonID);
+            //Display data in Pop-up for testing
+            //MessageBox.Show(strPersonID);
 
             //Convert the string over to an integer
             int intPersonID= Convert.ToInt32(strPersonID);

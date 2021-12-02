@@ -190,7 +190,7 @@ namespace WinBook_Croteau
             SqlCommand comm = new SqlCommand();
 
             //My Connection String
-            string strConn = GetConnected();
+            string strConn = @GetConnected();
 
             //My SQL command string to pull up one EBook's data
             string sqlString =

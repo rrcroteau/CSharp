@@ -29,7 +29,7 @@ namespace Lab6_Croteau
 
             set
             {
-                //needs to be a 10 digits
+                //needs to be 10 digits
                 if (Validator.IsValidPhone(value))
                 {
                     cellPhone = value; //store it
@@ -187,7 +187,7 @@ namespace Lab6_Croteau
         }
 
         //NEW  - Method that returns a Data Reader filled with all the data
-        // of one EBook.  This one EBook is specified by the ID passed
+        // of one Person.  This one Person is specified by the ID passed
         // to this function
         public SqlDataReader FindOnePerson(int intPersonID)
         {
@@ -196,11 +196,10 @@ namespace Lab6_Croteau
             SqlCommand comm = new SqlCommand();
 
             //My Connection String
-            string strConn = GetConnected();
+            string strConn = @GetConnected();
 
             //My SQL command string to pull up one EBook's data
-            string sqlString =
-           "SELECT * FROM Persons WHERE PersonID = @PersonID;";
+            string sqlString = "SELECT * FROM Persons WHERE PersonID = @PersonID;";
 
             //Tell the connection object the who, what, where, how
             conn.ConnectionString = strConn;

@@ -34,8 +34,8 @@ namespace WinBook_Croteau
             //Gather the information (Gathers the row clicked, then chooses the first cell's data
             string strEBook_ID = dgvResults.Rows[e.RowIndex].Cells[0].Value.ToString();
 
-            //Display data in Pop-up
-            MessageBox.Show(strEBook_ID);
+            //Display data in Pop-up for testing
+            //MessageBox.Show(strEBook_ID);
 
             //Convert the string over to an integer
             int intEBook_ID = Convert.ToInt32(strEBook_ID);
