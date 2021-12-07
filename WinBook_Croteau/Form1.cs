@@ -16,6 +16,10 @@ namespace WinBook_Croteau
         public Form1()
         {
             InitializeComponent();
+            BtnDelete.Enabled = false;
+            BtnDelete.Visible = false;
+            BtnUpdate.Enabled = false;
+            BtnUpdate.Visible = false;
         }
 
         /// <summary>
@@ -25,6 +29,12 @@ namespace WinBook_Croteau
         public Form1(int intEBook_ID)
         {
             InitializeComponent();  //Creates and init's all form objects
+
+            //because this is existing data, we don't want to add anything
+            btnAdd.Enabled = false;
+            btnAdd.Visible = false;
+
+
 
             //Gather info about this one person and store it in a datareader
             EBook temp = new EBook();
@@ -80,6 +90,7 @@ namespace WinBook_Croteau
             temp.AuthFName = txtFName.Text;
             temp.AuthLName = txtLName.Text;
             temp.Email = txtEmail.Text;
+    
 
             //get date/times from pickers
             temp.DatePublished = dtpDatePublished.Value;
@@ -140,5 +151,86 @@ namespace WinBook_Croteau
 
         }
 
+        private void BtnUpdate_Click(object sender, EventArgs e)
+        {
+            lblFeedback.Text = "";
+            EBook temp = new EBook();
+
+
+            temp.Title = txtTitle.Text;
+            temp.AuthFName = txtFName.Text;
+            temp.AuthLName = txtLName.Text;
+            temp.Email = txtEmail.Text;
+            temp.EBook_ID = Convert.ToInt32(lblEBook_ID.Text);
+
+
+            //get date/times from pickers
+            temp.DatePublished = dtpDatePublished.Value;
+            temp.DateRentalExpires = dtpDateRentalExpires.Value;
+
+            //convert the string values of # to ints for validation/storage
+            int intTempPages;
+            bool blnResult1 = Int32.TryParse(txtPages.Text, out intTempPages);
+
+            if (blnResult1 == false)
+            {
+                lblFeedback.Text += "\nSorry, incorrect page #. Please try again. (ex. 214)";
+            }
+
+            else
+            {
+                temp.Pages = intTempPages;
+            }
+
+            int intBMPage;
+            bool blnResult2 = Int32.TryParse(txtBookmarkPage.Text, out intBMPage);
+
+            if (blnResult2 == false)
+            {
+                lblFeedback.Text += "\nSorry, incorrect bookmark page #. Please try again. (ex. 214)";
+            }
+
+            else
+            {
+                temp.BookmarkPage = intBMPage;
+            }
+
+            //convert the string values of # to double for validation/storage
+            double dblTempPrice;
+            bool blnResult3 = Double.TryParse(txtPrice.Text, out dblTempPrice);
+
+            if (blnResult3 == false)
+            {
+                lblFeedback.Text += "\nPlease enter a positive amount for Price (ex:  9.99)";
+            }
+
+            else
+            {
+                temp.Price = dblTempPrice;
+            }
+
+            if (temp.Feedback.Contains("ERROR:"))
+            {
+                lblFeedback.Text += temp.Feedback;
+            }
+
+            else
+            {
+                lblFeedback.Text = temp.UpdateARecord();
+
+            }
+        }
+
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            Int32 intEBook_ID = Convert.ToInt32(lblEBook_ID.Text);  //Get the ID from the Label
+
+            //Create a EBook so we can use the delete method
+            EBook temp = new EBook();
+
+            //Use the EBook ID and pass it to the delete function
+            // and get the number of records deleted
+            lblFeedback.Text = temp.DeleteOneEBook(intEBook_ID);
+        }
     }
 }

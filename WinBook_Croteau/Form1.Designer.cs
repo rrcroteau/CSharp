@@ -30,6 +30,8 @@ namespace WinBook_Croteau
         private void InitializeComponent()
         {
             System.Windows.Forms.Button btnAdd;
+            System.Windows.Forms.Button BtnDelete;
+            System.Windows.Forms.Button BtnUpdate;
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,20 +56,22 @@ namespace WinBook_Croteau
             this.label10 = new System.Windows.Forms.Label();
             this.lblEBook_ID = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            btnAdd = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.BtnDelete = new System.Windows.Forms.Button();
+            this.BtnUpdate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAdd
             // 
-            btnAdd.BackColor = System.Drawing.Color.Black;
-            btnAdd.ForeColor = System.Drawing.Color.White;
-            btnAdd.Location = new System.Drawing.Point(409, 401);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new System.Drawing.Size(100, 50);
-            btnAdd.TabIndex = 14;
-            btnAdd.Text = "Add A Book";
-            btnAdd.UseVisualStyleBackColor = false;
-            btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnAdd.BackColor = System.Drawing.Color.Black;
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Location = new System.Drawing.Point(343, 401);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(100, 50);
+            this.btnAdd.TabIndex = 14;
+            this.btnAdd.Text = "Add A Book";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label1
             // 
@@ -284,11 +288,37 @@ namespace WinBook_Croteau
             this.label11.TabIndex = 104;
             this.label11.Text = "EBook ID: ";
             // 
+            // BtnDelete
+            // 
+            this.BtnDelete.BackColor = System.Drawing.Color.Black;
+            this.BtnDelete.ForeColor = System.Drawing.Color.White;
+            this.BtnDelete.Location = new System.Drawing.Point(592, 401);
+            this.BtnDelete.Name = "BtnDelete";
+            this.BtnDelete.Size = new System.Drawing.Size(100, 50);
+            this.BtnDelete.TabIndex = 105;
+            this.BtnDelete.Text = "Delete A Book";
+            this.BtnDelete.UseVisualStyleBackColor = false;
+            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
+            // 
+            // BtnUpdate
+            // 
+            this.BtnUpdate.BackColor = System.Drawing.Color.Black;
+            this.BtnUpdate.ForeColor = System.Drawing.Color.White;
+            this.BtnUpdate.Location = new System.Drawing.Point(468, 401);
+            this.BtnUpdate.Name = "BtnUpdate";
+            this.BtnUpdate.Size = new System.Drawing.Size(100, 50);
+            this.BtnUpdate.TabIndex = 106;
+            this.BtnUpdate.Text = "Update Book";
+            this.BtnUpdate.UseVisualStyleBackColor = false;
+            this.BtnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(995, 689);
+            this.Controls.Add(this.BtnUpdate);
+            this.Controls.Add(this.BtnDelete);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.lblEBook_ID);
             this.Controls.Add(this.label10);
@@ -304,7 +334,7 @@ namespace WinBook_Croteau
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label5);
-            this.Controls.Add(btnAdd);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnFillInForm);
             this.Controls.Add(this.dtpDatePublished);
             this.Controls.Add(this.txtLName);
@@ -314,6 +344,7 @@ namespace WinBook_Croteau
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+        
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -332,6 +363,9 @@ namespace WinBook_Croteau
         private System.Windows.Forms.TextBox txtLName;
         private System.Windows.Forms.DateTimePicker dtpDatePublished;
         private System.Windows.Forms.Button btnFillInForm;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button BtnUpdate;
+        private System.Windows.Forms.Button BtnDelete;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label6;
