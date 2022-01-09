@@ -41,3 +41,15 @@ C:\Users\008012980\Desktop\SE245\WinBook_Croteau\bin\Debug\WinBook_Croteau.exe
 C:\Users\008012980\Desktop\SE245\WinBook_Croteau\bin\Debug\WinBook_Croteau.pdb
 C:\Users\008012980\Desktop\SE245\WinBook_Croteau\obj\Debug\WinBook_Croteau.exe
 C:\Users\008012980\Desktop\SE245\WinBook_Croteau\obj\Debug\WinBook_Croteau.pdb
+C:\Users\Ronald\Desktop\My_Repos\CSharp\SE245_CSharp\WinBook_Croteau\bin\Debug\WinBook_Croteau.exe.config
+C:\Users\Ronald\Desktop\My_Repos\CSharp\SE245_CSharp\WinBook_Croteau\bin\Debug\WinBook_Croteau.exe
+C:\Users\Ronald\Desktop\My_Repos\CSharp\SE245_CSharp\WinBook_Croteau\bin\Debug\WinBook_Croteau.pdb
+C:\Users\Ronald\Desktop\My_Repos\CSharp\SE245_CSharp\WinBook_Croteau\obj\Debug\WinBook_Croteau.csproj.AssemblyReference.cache
+C:\Users\Ronald\Desktop\My_Repos\CSharp\SE245_CSharp\WinBook_Croteau\obj\Debug\WinBook_Croteau.ControlPanel.resources
+C:\Users\Ronald\Desktop\My_Repos\CSharp\SE245_CSharp\WinBook_Croteau\obj\Debug\WinBook_Croteau.Form1.resources
+C:\Users\Ronald\Desktop\My_Repos\CSharp\SE245_CSharp\WinBook_Croteau\obj\Debug\WinBook_Croteau.Properties.Resources.resources
+C:\Users\Ronald\Desktop\My_Repos\CSharp\SE245_CSharp\WinBook_Croteau\obj\Debug\WinBook_Croteau.SearchMgr.resources
+C:\Users\Ronald\Desktop\My_Repos\CSharp\SE245_CSharp\WinBook_Croteau\obj\Debug\WinBook_Croteau.csproj.GenerateResource.cache
+C:\Users\Ronald\Desktop\My_Repos\CSharp\SE245_CSharp\WinBook_Croteau\obj\Debug\WinBook_Croteau.csproj.CoreCompileInputs.cache
+C:\Users\Ronald\Desktop\My_Repos\CSharp\SE245_CSharp\WinBook_Croteau\obj\Debug\WinBook_Croteau.exe
+C:\Users\Ronald\Desktop\My_Repos\CSharp\SE245_CSharp\WinBook_Croteau\obj\Debug\WinBook_Croteau.pdb
