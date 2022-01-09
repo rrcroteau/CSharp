@@ -41,3 +41,15 @@ C:\Users\008012980\Desktop\SE245\Week9\Lab7_Croteau\obj\Debug\Lab6_Croteau.pdb
 C:\Users\008012980\Desktop\SE245\Week9\Lab7_Croteau\bin\Debug\Lab6_Croteau.exe.config
 C:\Users\008012980\Desktop\SE245\Week9\Lab7_Croteau\bin\Debug\Lab6_Croteau.exe
 C:\Users\008012980\Desktop\SE245\Week9\Lab7_Croteau\bin\Debug\Lab6_Croteau.pdb
+C:\Users\Ronald\Desktop\My_Repos\CSharp\SE245_CSharp\Week9\Lab7_Croteau\bin\Debug\Lab6_Croteau.exe.config
+C:\Users\Ronald\Desktop\My_Repos\CSharp\SE245_CSharp\Week9\Lab7_Croteau\bin\Debug\Lab6_Croteau.exe
+C:\Users\Ronald\Desktop\My_Repos\CSharp\SE245_CSharp\Week9\Lab7_Croteau\bin\Debug\Lab6_Croteau.pdb
+C:\Users\Ronald\Desktop\My_Repos\CSharp\SE245_CSharp\Week9\Lab7_Croteau\obj\Debug\Lab6_Croteau.csproj.AssemblyReference.cache
+C:\Users\Ronald\Desktop\My_Repos\CSharp\SE245_CSharp\Week9\Lab7_Croteau\obj\Debug\Lab6_Croteau.ControlPanel.resources
+C:\Users\Ronald\Desktop\My_Repos\CSharp\SE245_CSharp\Week9\Lab7_Croteau\obj\Debug\Lab6_Croteau.Form1.resources
+C:\Users\Ronald\Desktop\My_Repos\CSharp\SE245_CSharp\Week9\Lab7_Croteau\obj\Debug\Lab6_Croteau.Properties.Resources.resources
+C:\Users\Ronald\Desktop\My_Repos\CSharp\SE245_CSharp\Week9\Lab7_Croteau\obj\Debug\Lab6_Croteau.SearchMgr.resources
+C:\Users\Ronald\Desktop\My_Repos\CSharp\SE245_CSharp\Week9\Lab7_Croteau\obj\Debug\Lab6_Croteau.csproj.GenerateResource.cache
+C:\Users\Ronald\Desktop\My_Repos\CSharp\SE245_CSharp\Week9\Lab7_Croteau\obj\Debug\Lab6_Croteau.csproj.CoreCompileInputs.cache
+C:\Users\Ronald\Desktop\My_Repos\CSharp\SE245_CSharp\Week9\Lab7_Croteau\obj\Debug\Lab6_Croteau.exe
+C:\Users\Ronald\Desktop\My_Repos\CSharp\SE245_CSharp\Week9\Lab7_Croteau\obj\Debug\Lab6_Croteau.pdb
