@@ -18,11 +18,12 @@ namespace WebCalc_RC
         //It will use the text stored to the button to determine the value to append to the string in the 'LCD display'
         protected void NumButtons_Click(object sender, EventArgs e)
         {
-            //check to see if Equals was last pressed (check the operand label ) and if so, clear the display and reset the operand label
+            //check to see if Equals was last pressed (check the operand label ) and if so, clear the display, reset the operand label,  and set Session Num1 variable to null
             if (lblOperand.Text == "=")
             {
                 txtLCD.Text = "";
                 lblOperand.Text = "";
+                Session["Num1"] = null;
             }
 
             //create this temp button in order to record the Text (in this case, the number) associated with the button
@@ -39,7 +40,12 @@ namespace WebCalc_RC
 
         protected void Operand_Click(object sender, EventArgs e)
         {
-            
+            //create running calculations, if applicable, allowing the user to see a running total if pressing multiple numbers and operands before pressing = (ie. 3 + 2 X 3 - 2 = )
+            if (lblOperand.Text != "=" && Session["Num1"] != null && (lblOperand.Text != "" && txtLCD.Text != "")) //this is to avoid mulitiple redundant calculations after the user has entered = or erroring out after using the CE button due to the LCD being empty and having a Session Num1 variable assigned
+            {
+                Calculate();
+            }
+
             //to avoid errors, lets make sure there are some numbers in the display before we try to store them
             if (txtLCD.Text != "")
             {   //You must store what is currently in the display in order use it later in the mathematical operation. You must use Session variables as tradition vars are deleted on refresh
@@ -57,11 +63,11 @@ namespace WebCalc_RC
                 lblOperand.Text = temp.Text;
 
                 //Clear the 'LCD Display' so the user can type in the next value
-                txtLCD.Text = "";            
+                txtLCD.Text = "";
 
             }
 
-            
+
         }
 
         protected void Equals_Click(object sender, EventArgs e)
@@ -69,62 +75,55 @@ namespace WebCalc_RC
             //to avoid errors we must first check that a session variable has been set for Num1 and that some numbers are current in the display
             if (Session["Num1"] != null && txtLCD.Text != "")
             {
-                //First we must store the current number in the display (we must also parse the numbers (currently strings) so we can do math with them
-                Double Num2 = Double.Parse(txtLCD.Text); //these can be local variables because the will only be used in the session which calculates/displays the result
-                Double Num1 = Double.Parse(Session["Num1"].ToString()); //retrieve Num1 we stored as session var earlier, set to string, parse to double, then store
-                String Operand = Session["Operand"].ToString(); //retrieve the operand we stored as a session var to use in the math computation control flow in this function
-                Double Result = 0; //create a variable to hold the mathematical result
-
-                //We must decide which math to perform based on the operand stored and the stored number(s)
-                switch (Operand)
-                {
-
-                    case "+":
-                        Result = Num1 + Num2;
-                        break;
-
-                    case "-":
-                        Result = Num1 - Num2;
-                        break;
-
-                    case "x":
-                        Result = Num1 * Num2;
-                        break;
-
-                    case "/":
-                        Result = Num1 / Num2;
-                        break;
-                }
-
-                //We must then display the results to the user
-                txtLCD.Text = Result.ToString();
-
-                //we also change the operand label
-                lblOperand.Text = "=";
+                Calculate(); //changed this code below into a function to be called during the operand button events as well
             }
+            ////to avoid errors we must first check that a session variable has been set for Num1 and that some numbers are current in the display
+            //if (Session["Num1"] != null && txtLCD.Text != "")
+            //{
+            //    //First we must store the current number in the display (we must also parse the numbers (currently strings) so we can do math with them
+            //    Double Num2 = Double.Parse(txtLCD.Text); //these can be local variables because the will only be used in the session which calculates/displays the result
+            //    Double Num1 = Double.Parse(Session["Num1"].ToString()); //retrieve Num1 we stored as session var earlier, set to string, parse to double, then store
+            //    String Operand = Session["Operand"].ToString(); //retrieve the operand we stored as a session var to use in the math computation control flow in this function
+            //    Double Result = 0; //create a variable to hold the mathematical result
+
+            //    //We must decide which math to perform based on the operand stored and the stored number(s)
+            //    switch (Operand)
+            //    {
+
+            //        case "+":
+            //            Result = Num1 + Num2;
+            //            break;
+
+            //        case "-":
+            //            Result = Num1 - Num2;
+            //            break;
+
+            //        case "x":
+            //            Result = Num1 * Num2;
+            //            break;
+
+            //        case "/":
+            //            Result = Num1 / Num2;
+            //            break;
+            //    }
+
+            //    //We must then display the results to the user
+            //    txtLCD.Text = Result.ToString();
+
+            //    //we also change the operand label
+            //    lblOperand.Text = "=";
+            //}
         }
 
         protected void Clear_Click(object sender, EventArgs e)
         {
-
-            //make the button inactive if there is nothing stored to the session variable and nothing in the LCD
-            if (btnClear.Text == "AC" && txtLCD.Text == "" && Session["Num1"] == null)
-            {
-                btnClear.Enabled = false;
-            }
-
-            else
-            {
-                btnClear.Enabled = true;
-            }
-
 
             //if the button is set to AC, this will clear anything stored to the session variable of Num1 and "hard reset" the functions of the calculator, if not it will just clear the current entry on the screen
             if (btnClear.Text == "AC")
             {
                 Session["Num1"] = null;
             }
-            
+
             txtLCD.Text = ""; //simply clears out the LCD
             lblOperand.Text = ""; //also clears the operand label
 
@@ -171,6 +170,43 @@ namespace WebCalc_RC
         {
             Session["Memory"] = "";
             lblMemory.Text = "";
+        }
+
+        protected void Calculate()
+        {
+            //First we must store the current number in the display (we must also parse the numbers (currently strings) so we can do math with them
+            Double Num2 = Double.Parse(txtLCD.Text); //these can be local variables because the will only be used in the session which calculates/displays the result
+            Double Num1 = Double.Parse(Session["Num1"].ToString()); //retrieve Num1 we stored as session var earlier, set to string, parse to double, then store
+            String Operand = Session["Operand"].ToString(); //retrieve the operand we stored as a session var to use in the math computation control flow in this function
+            Double Result = 0; //create a variable to hold the mathematical result
+
+            //We must decide which math to perform based on the operand stored and the stored number(s)
+            switch (Operand)
+            {
+
+                case "+":
+                    Result = Num1 + Num2;
+                    break;
+
+                case "-":
+                    Result = Num1 - Num2;
+                    break;
+
+                case "x":
+                    Result = Num1 * Num2;
+                    break;
+
+                case "/":
+                    Result = Num1 / Num2;
+                    break;
+            }
+
+            //We must then display the results to the user
+            txtLCD.Text = Result.ToString();
+            Session["Num1"] = Result.ToString(); // this is to keep the tally rolling in the event the user enters multiple operands before equals
+            //we also change the operand label
+            lblOperand.Text = "=";
+        
         }
     }
 }
