@@ -106,6 +106,19 @@ namespace WebCalc_RC
 
         protected void Clear_Click(object sender, EventArgs e)
         {
+
+            //make the button inactive if there is nothing stored to the session variable and nothing in the LCD
+            if (btnClear.Text == "AC" && txtLCD.Text == "" && Session["Num1"] == null)
+            {
+                btnClear.Enabled = false;
+            }
+
+            else
+            {
+                btnClear.Enabled = true;
+            }
+
+
             //if the button is set to AC, this will clear anything stored to the session variable of Num1 and "hard reset" the functions of the calculator, if not it will just clear the current entry on the screen
             if (btnClear.Text == "AC")
             {
