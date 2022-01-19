@@ -4,9 +4,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="SecondContentHolder" runat="server">
 
     <div>
-        <h1>Dummy Content</h1>
+        <h1>New Dance Alert</h1>
         <p>
-            &nbsp;&nbsp;&nbsp;&nbsp;This is for my dummy second content holder
+            &nbsp;&nbsp;&nbsp;&nbsp;Here I will add the information about a new dance that has been choreographed/taught
+            <br />
+            <br />
         </p>
     </div>
 
