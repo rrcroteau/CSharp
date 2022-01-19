@@ -1,4 +1,8 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="SE256_Lab_RonC.SiteMaster" %>
+﻿<%-- This is the master page. The settings defined on this page will trickle down to all other pages --%>
+
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="SE256_Lab_RonC.SiteMaster" %>
+
+<%-- HTML layout begins --%>
 
 <!DOCTYPE html>
 
@@ -6,13 +10,17 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+
+     <%-- Razor Script to display title in the browser tab --%>
+    <title><%: Page.Title %> - SE256 Lab - Croteau</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
+     <%--CSS Bundles --%>
     <webopt:bundlereference runat="server" path="~/Content/css" />
+    <%-- Website Icon/Image --%>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
@@ -37,7 +45,7 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-
+        <%-- Navbar --%>
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -46,7 +54,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">Application name</a>
+                    <a class="navbar-brand" runat="server" href="~/">SE256 Lab</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
@@ -57,12 +65,23 @@
                 </div>
             </div>
         </div>
+         <%-- Main Content and Footer in one div --%>
+        <%-- Place Holder for 2nd Content Holder - Can be static or database driven --%>
+        <div style="background-color:cadetblue">
+            <asp:ContentPlaceHolder ID="SecondContentHolder" runat="server">
+
+            </asp:ContentPlaceHolder>
+
+        </div>
+
+        <%-- Placeholder for the pages content --%>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+                <%-- Razor Scripting to compute current year dynamically each time page is loaded --%>
+                <p>&copy; <%: DateTime.Now.Year %> - Ron Croteau</p>
             </footer>
         </div>
 
