@@ -7,7 +7,7 @@
     <div>
         <h1>Breaking News:</h1>
         <p>
-            &nbsp;&nbsp;&nbsp;&nbsp;Microsoft has purchased Activision Blizzard to 89.7 billion dollars!
+            &nbsp;&nbsp;&nbsp;&nbsp;Microsoft has purchased Activision Blizzard for 89.7 billion dollars!
         </p>
 
     </div>

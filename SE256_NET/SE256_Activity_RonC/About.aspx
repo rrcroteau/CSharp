@@ -12,7 +12,7 @@
 
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2><%: Title %>.</h2>
-    <h3>Your application description page.</h3>
-    <p>Use this area to provide additional information.</p>
+    <h2><%: Title %></h2>
+    <h3>EBook Manager</h3>
+    <p>This application allows the user to create, read, update, and delete EBook records from a database.</p>
 </asp:Content>
