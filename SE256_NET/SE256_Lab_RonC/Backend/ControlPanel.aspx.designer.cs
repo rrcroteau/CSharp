@@ -7,29 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SE256_Lab_RonC
+namespace SE256_Lab_RonC.Backend
 {
 
 
-    public partial class SiteMaster
+    public partial class ControlPanel
     {
 
         /// <summary>
-        /// NewContentHolder control.
+        /// BtnLogout control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder NewContentHolder;
-
-        /// <summary>
-        /// MainContent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.Button BtnLogout;
     }
 }

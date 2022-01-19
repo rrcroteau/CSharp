@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="About" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="About.aspx.cs" Inherits="SE256_Lab_RonC.About" %>
 
 <%-- Placeholder for the 2nd Content holder. If there is no breaking news, clear the content between the div tags--%>
-<asp:Content ID="Content2" ContentPlaceHolderID="SecondContentHolder" runat="server">
+<asp:Content ID="NewContent" ContentPlaceHolderID="NewContentHolder" runat="server">
 
     <div>
         
