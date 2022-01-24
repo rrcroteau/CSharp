@@ -71,3 +71,4 @@ C:\Users\008012980\Desktop\NEIT_Repos\CSharp\SE256_NET\SE256_Activity_RonC\obj\D
 C:\Users\008012980\Desktop\NEIT_Repos\CSharp\SE256_NET\SE256_Activity_RonC\obj\Debug\SE256_Activity_RonC.csproj.CopyComplete
 C:\Users\008012980\Desktop\NEIT_Repos\CSharp\SE256_NET\SE256_Activity_RonC\obj\Debug\SE256_Activity_RonC.dll
 C:\Users\008012980\Desktop\NEIT_Repos\CSharp\SE256_NET\SE256_Activity_RonC\obj\Debug\SE256_Activity_RonC.pdb
+C:\Users\008012980\Desktop\NEIT_Repos\CSharp\SE256_NET\SE256_Activity_RonC\obj\Debug\SE256_Activity_RonC.csproj.AssemblyReference.cache

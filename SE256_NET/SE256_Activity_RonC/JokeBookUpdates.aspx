@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="JokeBookUpdates.aspx.cs" Inherits="SE256_Activity_RonC.JokeBookUpdates" %>
+﻿<%@ Page Title="JokeBook" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="JokeBookUpdates.aspx.cs" Inherits="SE256_Activity_RonC.JokeBookUpdates" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="BreakingNewsContent" runat="server">
     <div>
         <h1>Breaking Joke News:</h1>
