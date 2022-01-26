@@ -11,6 +11,7 @@
             <tr>
                 <td><a href="EbookMgr.aspx" runat="server">Add an EBook</a></td>
             </tr>
+
             <tr>
                 <td><asp:Button ID="BtnLogout" runat="server" Text="Log Out" OnClick="BtnLogout_Click" /></td>
             </tr>

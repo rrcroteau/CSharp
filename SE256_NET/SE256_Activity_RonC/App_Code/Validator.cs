@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SE256_Activity_RonC
+namespace SE256_Activity_RonC.App_Code
 {
     public class Validator
     {
