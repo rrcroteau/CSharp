@@ -108,6 +108,7 @@
     <Content Include="About.aspx" />
     <Content Include="Backend\ControlPanel.aspx" />
     <Content Include="Backend\Default.aspx" />
+    <Content Include="Backend\LineDanceMgr.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -163,6 +164,9 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Code\Dance.cs" />
+    <Compile Include="App_Code\Dance1.cs" />
+    <Compile Include="App_Code\Validator.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -185,6 +189,13 @@
     </Compile>
     <Compile Include="Backend\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Backend\LineDanceMgr.aspx.cs">
+      <DependentUpon>LineDanceMgr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backend\LineDanceMgr.aspx.designer.cs">
+      <DependentUpon>LineDanceMgr.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
