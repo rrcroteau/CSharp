@@ -80,5 +80,70 @@ namespace SE256_Lab_RonC.App_Code
             //return the result string
             return strResult;
         }
+
+        //create a Search that stores the results into a DataReader for display back to the user
+        public SqlDataReader SearchDances(String strDanceName, String strMusic)
+        {
+            //declare a DR to be returned fill
+            SqlDataReader dr;
+
+            //create the command obj
+            SqlCommand comm = new SqlCommand();
+
+            //write the SELECT statement to perform the SQL search
+            string strSQL = "SELECT DanceID, DanceName, Choreo1FName, Choreo1LName, Music, Artist FROM LineDances WHERE 0=0";
+
+            //if the dance name or music is filled, use it in the search criteria
+            if (strDanceName.Length > 0)
+            {
+                strSQL += " AND DanceName LIKE @DanceName";
+                comm.Parameters.AddWithValue("@DanceName", "%" + strDanceName + "%");
+            }
+
+            if (strMusic.Length > 0)
+            {
+                strSQL += " AND Music LIKE @Music";
+                comm.Parameters.AddWithValue("@Music", "%" + strMusic + "%");
+            }
+
+            //create/finish the rest of the DB objects (conn and comm)
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = GetConnected();
+            comm.Connection = conn;
+            comm.CommandText = strSQL;
+
+            //get the data and store it into the DR
+            conn.Open();
+            dr = comm.ExecuteReader(); //fill the DR
+
+            //Note: cannot close connection here before returning the DR to the caller, or else it will get destroyed.  The connection will close automatically after function end
+
+            //return the filled DR
+            return dr;
+        }
+
+        public SqlDataReader FindOneDance(int intDanceID)
+        {
+            //create and init the DB tools
+            SqlConnection conn = new SqlConnection();
+            SqlCommand comm = new SqlCommand();
+
+            //create the SQL string to pull up the Dance based on the DanceID
+            string sqlString = "SELECT * FROM LineDances WHERE DanceID = @DanceID;";
+
+            conn.ConnectionString = GetConnected();
+            //give the command obj what it needs
+            comm.Connection = conn;
+            comm.CommandText = sqlString;
+            comm.Parameters.AddWithValue("@DanceID", intDanceID);
+
+            //open the DB
+            conn.Open();
+
+            //execute the reader and return the DR to the calling function
+            return comm.ExecuteReader();  //the connection will close automatically when the function ends
+
+        }
+
     }
 }

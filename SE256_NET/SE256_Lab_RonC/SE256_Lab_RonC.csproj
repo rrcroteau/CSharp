@@ -107,6 +107,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Backend\ControlPanel.aspx" />
+    <Content Include="Backend\DanceSearch.aspx" />
     <Content Include="Backend\Default.aspx" />
     <Content Include="Backend\LineDanceMgr.aspx" />
     <Content Include="Contact.aspx" />
@@ -182,6 +183,13 @@
     </Compile>
     <Compile Include="Backend\ControlPanel.aspx.designer.cs">
       <DependentUpon>ControlPanel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Backend\DanceSearch.aspx.cs">
+      <DependentUpon>DanceSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backend\DanceSearch.aspx.designer.cs">
+      <DependentUpon>DanceSearch.aspx</DependentUpon>
     </Compile>
     <Compile Include="Backend\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

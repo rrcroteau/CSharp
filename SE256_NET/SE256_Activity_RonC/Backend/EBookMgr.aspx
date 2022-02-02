@@ -82,6 +82,12 @@
     <%-- Button to add a book to a DB --%>
     <br />
     <asp:Button ID="BtnAdd" runat="server" Text="Add" OnClick="BtnAdd_Click" />
+    &nbsp;&nbsp;&nbsp;
+    <asp:Button ID="BtnUpdate" runat="server" Text="Update" OnClick="BtnUpdate_Click" />
+    &nbsp;&nbsp;&nbsp;
+    <asp:Button ID="BtnDelete" runat="server" Text="Delete" OnClick="BtnDelete_Click" />
+    &nbsp;&nbsp;&nbsp;
+    <asp:Button ID="BtnCancel" runat="server" Text="Cancel" OnClick="BtnCancel_Click" />
 
     <%-- Feedback Label to show errors, provide confirmation, etc. --%>
     <br />

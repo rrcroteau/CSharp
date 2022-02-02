@@ -101,10 +101,10 @@ namespace SE256_Activity_RonC.App_Code
             string strResult;
 
             //Make a connection object
-            SqlConnection Conn = new SqlConnection();
+            SqlConnection conn = new SqlConnection();
 
             //Initialize it's properties to get connected
-            Conn.ConnectionString = @GetConnected(); 
+            conn.ConnectionString = @GetConnected(); 
 
 
             //create the SQL string to insert the record into the DB
@@ -112,7 +112,7 @@ namespace SE256_Activity_RonC.App_Code
             //create and give the command to the server
             SqlCommand comm = new SqlCommand();
             comm.CommandText = strSQL;  //Make the SQL string the command
-            comm.Connection = Conn;     //set up the connection command
+            comm.Connection = conn;     //set up the connection command
 
             //Fill in the paramters (Has to be created in same sequence as they are used in SQL Statement)
             comm.Parameters.AddWithValue("@Title", Title);
@@ -128,10 +128,10 @@ namespace SE256_Activity_RonC.App_Code
             //attempt to connect to the server and add record
             try
             {
-                Conn.Open();                                        //Open connection to DB - Think of dialing a friend on phone
+                conn.Open();                                        //Open connection to DB - Think of dialing a friend on phone
                 int intRecs = comm.ExecuteNonQuery();
                 strResult = $"SUCCESS: Inserted {intRecs} records.";       //Report that we made the connection and added a record
-                Conn.Close();                                       //Hanging up after phone call
+                conn.Close();                                       //Hanging up after phone call
             }
             catch (Exception err)                                   //If we got here, there was a problem connecting to DB
             {
@@ -263,6 +263,107 @@ namespace SE256_Activity_RonC.App_Code
 
             //return the results to the calling form
             return comm.ExecuteReader();
+        }
+
+        //create a method to delete one EBook based on the EBook ID
+        public string DeleteOneEBook(int intEBook_ID)
+        {
+            Int32 intRecords;
+            string strResult;
+
+            //create and init the needed DB objects
+            SqlConnection conn = new SqlConnection();
+            SqlCommand comm = new SqlCommand();
+
+            //give the connection string to the conn object
+            conn.ConnectionString = GetConnected();
+
+            //create the SQL string to pass to the comm object
+            string sqlString = "DELETE FROM EBooks WHERE EBook_ID = @Ebook_ID;";
+
+            //give the command the info it needs
+            comm.Connection = conn;
+            comm.CommandText = sqlString;
+            comm.Parameters.AddWithValue("@EBook_ID", intEBook_ID);
+
+            try
+            {
+                //open the connection
+                conn.Open();
+
+                //delete the record and store number of records affected
+                intRecords = comm.ExecuteNonQuery();
+                strResult = intRecords.ToString() + " Records Deleted.";
+            }
+            catch (Exception err)
+            {
+                strResult = "ERROR: " + err.Message; //set the feedback to show the error message
+            }
+            finally
+            {
+                //close the connection
+                conn.Close();
+            }
+
+
+            return strResult;
+        }
+
+        //create a method to Update a record
+        public string UpdateARecord()
+        {
+            //Declare stringvar 
+            string strResult;
+    
+
+            //Make a connection object
+            SqlConnection conn = new SqlConnection();
+
+            //Initialize it's properties to get connected
+            conn.ConnectionString = @GetConnected();
+
+
+            //create the SQL string to insert the record into the DB
+            string strSQL = "UPDATE EBooks SET Title = @Title, AuthorFirst = @AuthorFirst, AuthorLast = @AuthorLast, Email = @Email, Pages = @Pages, DatePublished = @DatePublished, DateRentalExpires = @DateRentalExpires, BookmarkPage = @BookmarkPage, Price = @Price WHERE EBook_ID = @EBook_ID";
+            //create and give the command to the server
+            SqlCommand comm = new SqlCommand();
+            comm.CommandText = strSQL;  //Make the SQL string the command
+            comm.Connection = conn;     //set up the connection command
+
+            //Fill in the paramters (Has to be created in same sequence as they are used in SQL Statement)
+            comm.Parameters.AddWithValue("@Title", Title);
+            comm.Parameters.AddWithValue("@AuthorFirst", AuthFName);
+            comm.Parameters.AddWithValue("@AuthorLast", AuthLName);
+            comm.Parameters.AddWithValue("@Email", Email);
+            comm.Parameters.AddWithValue("@Pages", Pages);
+            comm.Parameters.AddWithValue("@DatePublished", DatePublished);
+            comm.Parameters.AddWithValue("@DateRentalExpires", DateRentalExpires);
+            comm.Parameters.AddWithValue("@BookmarkPage", BookmarkPage);
+            comm.Parameters.AddWithValue("@Price", Price);
+            comm.Parameters.AddWithValue("@EBook_ID", EBook_ID);
+
+            //attempt to connect to the server and add record
+            try
+            {
+                conn.Open();                                        //Open connection to DB - Think of dialing a friend on phone
+                int intRecords = comm.ExecuteNonQuery();
+                strResult = intRecords.ToString() + " Records Updated.";       //Report that we made the connection and updated a record
+                                                    //Hanging up after phone call
+            }
+            catch (Exception err)                                   //If we got here, there was a problem connecting to DB
+            {
+                strResult = "ERROR: " + err.Message;                //Set feedback to state there was an error & error info
+            }
+            finally
+            {
+                //close the connection
+                conn.Close();
+            }
+
+
+
+            //Return resulting feedback string
+            return strResult;
         }
 
     }

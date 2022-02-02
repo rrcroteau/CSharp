@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+//use the DB capabilities to get access to SQL server
+using System.Data;
+using System.Data.SqlClient;
 using SE256_Lab_RonC.App_Code; //add this to get access to App Code folder
 
 namespace SE256_Lab_RonC.Backend
@@ -30,6 +33,38 @@ namespace SE256_Lab_RonC.Backend
                 Populate_MonthList();//populate the drop down
                 Populate_YearList();//populate the drop down
             }
+
+            //check to see if there is a DanceID in the URL, and if so, pull up that record (in essence, when we click the Edit in the search results)
+            string strDanceID;
+            int intDanceID;
+
+            if ((!IsPostBack) && Request.QueryString["DanceID"] != null)
+            {
+                strDanceID = Request.QueryString["DanceID"].ToString();
+                lblDance_ID.Text = strDanceID;
+
+                intDanceID = Convert.ToInt32(strDanceID);
+
+                //create a Dance object and fill it based on the DanceID
+                Dance1 temp = new Dance1();
+                SqlDataReader dr = temp.FindOneDance(intDanceID);
+
+                while (dr.Read())
+                {
+                    txtDanceName.Text = dr["DanceName"].ToString();
+                    txtChoreo1First.Text = dr["Choreo1FName"].ToString();
+                    txtChoreo1Last.Text = dr["Choreo1LName"].ToString();
+                    txtChoreo2First.Text = dr["Choreo2FName"].ToString();
+                    txtChoreo2Last.Text = dr["Choreo2LName"].ToString();
+                    txtChoreo3First.Text = dr["Choreo3FName"].ToString();
+                    txtChoreo3Last.Text = dr["Choreo3LName"].ToString();
+                    txtMusic.Text = dr["Music"].ToString();
+                    txtArtist.Text = dr["Artist"].ToString();
+
+                }
+
+            }
+
         }
 
         protected void BtnAdd_Click(object sender, EventArgs e)
