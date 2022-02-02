@@ -9,8 +9,13 @@
         <table>
 
             <tr>
-                <td><a href="EbookMgr.aspx" runat="server">Add an EBook</a></td>
+                <td><a href="EBookMgr.aspx" runat="server">Add an EBook</a></td>
             </tr>
+            
+            <tr>
+                <td><a href="EBookSearch.aspx" runat="server">Search our EBooks</a></td>
+            </tr>
+
             <tr><td>&nbsp;</td></tr> <%--This is just to add some space between the rows and the log out button--%>
             <tr>
                 <td><asp:Button ID="BtnLogout" runat="server" Text="Log Out" OnClick="BtnLogout_Click" /></td>

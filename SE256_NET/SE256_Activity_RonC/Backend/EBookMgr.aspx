@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EBookMgr.aspx.cs" Inherits="SE256_Activity_RonC.Backend.EBookMgr" %>
+﻿<%@ Page Title="EBook Manager" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EBookMgr.aspx.cs" Inherits="SE256_Activity_RonC.Backend.EBookMgr" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="BreakingNewsContent" runat="server">
 
     <a href="~/Backend/ControlPanel.aspx" runat="server" style="color:black">Return to Control Panel</a>
@@ -42,7 +42,7 @@
         <%-- Date Published --%>
         <tr>
             <td>Date Published</td>
-            <td>&nbsp; <asp:Calendar ID="calDatePublished" runat="server" /></td>
+            <td>&nbsp; <asp:Calendar ID="calDatePublished" runat="server"><SelectedDayStyle Font-Size="Large" /></asp:Calendar></td>
         </tr>
 
         <tr>
@@ -74,7 +74,7 @@
         <%-- Date Rental Expires --%>
         <tr>
             <td>Date Rental Expires</td>
-            <td><asp:Calendar ID="calRentalExpires" runat="server" /></td>
+            <td><asp:Calendar ID="calRentalExpires" runat="server"><SelectedDayStyle Font-Size="Large" /></asp:Calendar></td>
         </tr>
 
     </table>

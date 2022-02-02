@@ -148,7 +148,123 @@ namespace SE256_Activity_RonC.App_Code
             return strResult;
         }
 
-        
+        //create a Search that returns a DataSet -- this is used to populate a DataGrid, which basically looks like a spreadsheet
+        public DataSet SearchEBooks_DS(String strTitle, String strAuthorLast)
+        {
+            //create the DS obj, which we will return filled at the end of the function
+            DataSet ds = new DataSet();
+
+            //create a command obj to pass the commands
+            SqlCommand comm = new SqlCommand();
+
+            //write the SQL SELECT string to pass to command later
+            String strSql = "SELECT EBook_ID, Title, AuthorFirst, AuthorLast, DatePublished FROM EBooks WHERE 0=0"; //this will return all records if no criteria are entered
+
+            //add to the SELECT string if the user entered criteria in the search boxes
+            if (strTitle.Length >0)
+            {
+                strSql += " AND Title LIKE @Title";
+                comm.Parameters.AddWithValue("@Title", "%" + strTitle + "%");
+            }
+
+            if (strAuthorLast.Length >0)
+            {
+                strSql += " AND AuthorLName LIKE @AuthorLast";
+                comm.Parameters.AddWithValue("@AuthorLast", "%" + strAuthorLast + "%");
+            }
+
+            //create the connection obj and give it the connection string
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = GetConnected();
+
+            //fill the command obj from earlier with the newly created/updated objects
+            comm.Connection = conn;
+            comm.CommandText = strSql;
+
+            //DataSets need a DataAdapter, so create one and give it the command
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = comm;
+
+            //open the connection, get the data, and close the connection
+            conn.Open();
+            da.Fill(ds, "EBooks_Temp"); //use the adapter to fill the DS and call it by a temp name (to avoid confusion with the actual Table in the DB)
+            conn.Close();
+
+            //return the DS
+            return ds;
+        }
+
+        //*****
+        //Create a Search that returns a DataReader object... This can be used to create a more customizable return to the user using a Repeater or Literal, for example
+        //*****
+
+        public SqlDataReader SearchEBooks_DR(String strTitle, String strAuthorLast)
+        {
+            //create the DR obj that we will return filled
+            SqlDataReader dr;
+
+            //create a command obj to pass the commands
+            SqlCommand comm = new SqlCommand();
+
+            //write the SQL SELECT string to pass to command later
+            String strSql = "SELECT EBook_ID, Title, AuthorFirst, AuthorLast, DatePublished FROM EBooks WHERE 0=0"; //this will return all records if no criteria are entered
+
+            //add to the SELECT string if the user entered criteria in the search boxes
+            if (strTitle.Length > 0)
+            {
+                strSql += " AND Title LIKE @Title";
+                comm.Parameters.AddWithValue("@Title", "%" + strTitle + "%");
+            }
+
+            if (strAuthorLast.Length > 0)
+            {
+                strSql += " AND AuthorLast LIKE @AuthorLast";
+                comm.Parameters.AddWithValue("@AuthorLast", "%" + strAuthorLast + "%");
+            }
+
+            //create the connection obj and give it the connection string
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = GetConnected();
+
+            //fill the command obj from earlier with the newly created/updated objects
+            comm.Connection = conn;
+            comm.CommandText = strSql;
+
+            //open the connection, get the data into the DR (cannot manaully close connection with a DR obj or it will be destroyed before return, but connection will auto-close when function ends)
+            conn.Open();
+            dr = comm.ExecuteReader();
+
+
+            //return the filled DR
+            return dr;
+        }//the connection we didn't manually close above will now close since the function is complete -- this way we can reach the return statement with the DR intact
+
+        //create a method to return a DR object of a specific database row based on ID an display the results
+        public SqlDataReader FindOneEBook(int intEBook_ID)
+        {
+            //create and init the needed DB objects
+            SqlConnection conn = new SqlConnection();
+            SqlCommand comm = new SqlCommand();
+
+            //give the connection string to the conn object
+            conn.ConnectionString = GetConnected();
+
+            //create the SQL string to pass to the comm object
+            string sqlString = "SELECT * FROM EBooks WHERE EBook_ID = @Ebook_ID;";
+
+            //give the command the info it needs
+            comm.Connection = conn;
+            comm.CommandText = sqlString;
+            comm.Parameters.AddWithValue("@EBook_ID", intEBook_ID);
+
+            //open the connection to execute the reader
+            conn.Open();
+
+
+            //return the results to the calling form
+            return comm.ExecuteReader();
+        }
+
     }
 
 }
