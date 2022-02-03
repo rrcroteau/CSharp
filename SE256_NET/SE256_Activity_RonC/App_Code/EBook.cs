@@ -169,7 +169,7 @@ namespace SE256_Activity_RonC.App_Code
 
             if (strAuthorLast.Length >0)
             {
-                strSql += " AND AuthorLName LIKE @AuthorLast";
+                strSql += " AND AuthorLast LIKE @AuthorLast";
                 comm.Parameters.AddWithValue("@AuthorLast", "%" + strAuthorLast + "%");
             }
 

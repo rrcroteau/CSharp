@@ -42,7 +42,7 @@ namespace SE256_Lab_RonC.Backend
             //start the table
             litResults.Text = "<table>";
             //create a header row
-            litResults.Text += "<th>Dance Name</th><th>Choreographer First Name</th><th>Choreographer Last Name</th><th>Music</th><th>Artist</th>";
+            litResults.Text += "<caption>Search Results</caption><th>Dance Name</th><th>Choreographer First Name</th><th>Choreographer Last Name</th><th>Music</th><th>Artist</th><th>Edit</th>";
 
             //loop through the results and add each record to its own row
             while (dr.Read())

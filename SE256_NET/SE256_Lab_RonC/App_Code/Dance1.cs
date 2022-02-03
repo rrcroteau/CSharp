@@ -56,7 +56,7 @@ namespace SE256_Lab_RonC.App_Code
             comm.Parameters.AddWithValue("@Difficulty", Difficulty);
             comm.Parameters.AddWithValue("@Steps", Steps);
             comm.Parameters.AddWithValue("@Walls", Walls);
-            comm.Parameters.AddWithValue("DateChoreo", DateChoreo);
+            comm.Parameters.AddWithValue("@DateChoreo", DateChoreo);
 
             //attempt to connect to the server
             try
@@ -145,5 +145,111 @@ namespace SE256_Lab_RonC.App_Code
 
         }
 
+        //create a method to delete one EBook based on the EBook ID
+        public string DeleteOneDance(int intDanceID)
+        {
+            Int32 intRecords;
+            string strResult;
+
+            //create and init the needed DB objects
+            SqlConnection conn = new SqlConnection();
+            SqlCommand comm = new SqlCommand();
+
+            //give the connection string to the conn object
+            conn.ConnectionString = GetConnected();
+
+            //create the SQL string to pass to the comm object
+            string sqlString = "DELETE FROM LineDances WHERE DanceID = @DanceID;";
+
+            //give the command the info it needs
+            comm.Connection = conn;
+            comm.CommandText = sqlString;
+            comm.Parameters.AddWithValue("@DanceID", intDanceID);
+
+            try
+            {
+                //open the connection
+                conn.Open();
+
+                //delete the record and store number of records affected
+                intRecords = comm.ExecuteNonQuery();
+                strResult = intRecords.ToString() + " Records Deleted.";
+            }
+            catch (Exception err)
+            {
+                strResult = "ERROR: " + err.Message; //set the feedback to show the error message
+            }
+            finally
+            {
+                //close the connection
+                conn.Close();
+            }
+
+
+            return strResult;
+        }
+
+        //create a method to Update a record
+        public string UpdateARecord()
+        {
+            //Declare stringvar 
+            string strResult;
+
+
+            //Make a connection object
+            SqlConnection conn = new SqlConnection();
+
+            //Initialize it's properties to get connected
+            conn.ConnectionString = @GetConnected();
+
+
+            //create the SQL string to insert the record into the DB
+            string strSQL = "UPDATE LineDances SET DanceName = @DanceName, Choreo1FName = @Choreo1FName, Choreo1LName = @Choreo1LName, Choreo2FName = @Choreo2FName, Choreo2LName = @Choreo2LName, Choreo3FName = @Choreo3FName, Choreo3LName = @Choreo3LName, Music = @Music, Artist = @Artist, LineOrPartner = @LineOrPartner, Difficulty = @Difficulty, Steps = @Steps, Walls = @Walls, DateChoreo = @DateChoreo WHERE DanceID = @DanceID";
+
+            //create and give the command to the server
+            SqlCommand comm = new SqlCommand();
+            comm.CommandText = strSQL;  //Make the SQL string the command
+            comm.Connection = conn;     //set up the connection command
+
+            //Fill in the parameters (Has to be created in same sequence as they are used in SQL Statement)
+            comm.Parameters.AddWithValue("@DanceName", DanceName);
+            comm.Parameters.AddWithValue("@Choreo1FName", Choreo1FName);
+            comm.Parameters.AddWithValue("@Choreo1LName", Choreo1LName);
+            comm.Parameters.AddWithValue("@Choreo2FName", Choreo2FName);
+            comm.Parameters.AddWithValue("@Choreo2LName", Choreo2LName);
+            comm.Parameters.AddWithValue("@Choreo3FName", Choreo3FName);
+            comm.Parameters.AddWithValue("@Choreo3LName", Choreo3LName);
+            comm.Parameters.AddWithValue("@Music", Music);
+            comm.Parameters.AddWithValue("@Artist", Artist);
+            comm.Parameters.AddWithValue("@LineOrPartner", LineOrPartner);
+            comm.Parameters.AddWithValue("@Difficulty", Difficulty);
+            comm.Parameters.AddWithValue("@Steps", Steps);
+            comm.Parameters.AddWithValue("@Walls", Walls);
+            comm.Parameters.AddWithValue("@DateChoreo", DateChoreo);
+            comm.Parameters.AddWithValue("@DanceID", Dance_ID);
+
+            //attempt to connect to the server and add record
+            try
+            {
+                conn.Open();                                        //Open connection to DB - Think of dialing a friend on phone
+                int intRecords = comm.ExecuteNonQuery();
+                strResult = intRecords.ToString() + " Records Updated.";       //Report that we made the connection and updated a record
+                                                                               //Hanging up after phone call
+            }
+            catch (Exception err)                                   //If we got here, there was a problem connecting to DB
+            {
+                strResult = "ERROR: " + err.Message;                //Set feedback to state there was an error & error info
+            }
+            finally
+            {
+                //close the connection
+                conn.Close();
+            }
+
+
+
+            //Return resulting feedback string
+            return strResult;
+        }
     }
 }

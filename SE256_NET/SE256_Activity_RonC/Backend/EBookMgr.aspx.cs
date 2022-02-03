@@ -60,11 +60,16 @@ namespace SE256_Activity_RonC.Backend
                     txtBookmarkPage.Text = dr["BookmarkPage"].ToString();
 
                     calDatePublished.SelectedDate = DateTime.Parse(dr["DatePublished"].ToString()).Date;
-                    calRentalExpires.SelectedDate = DateTime.Parse(dr["DatePublished"].ToString()).Date;
+                    calRentalExpires.SelectedDate = DateTime.Parse(dr["DateRentalExpires"].ToString()).Date;
                     calDatePublished.VisibleDate = calDatePublished.SelectedDate;
                     calRentalExpires.VisibleDate = calRentalExpires.SelectedDate;
                 }
             }
+            else if ((IsPostBack) && Request.QueryString["EBook_ID"] != null)
+            {
+                //this is so that it doesn't hide my update and delete buttons when there is an EBook_ID and the site posts back due to a calendar picker change
+            }
+
             else
             {
                 //since there is no Book ID, it must be an add, so we can hide the UPDATE and DELETE buttons

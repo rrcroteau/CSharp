@@ -10,7 +10,7 @@
         <%-- For later use --%>
         <tr>
             <td>Dance ID</td>
-            <td>&nbsp; <asp:Label ID="lblDance_ID" runat="server" style="color:black"/></td>
+            <td>&nbsp; <asp:Label ID="lblDance_ID" runat="server" style="color:#fe7014"/></td>
         </tr>
 
         <tr>
@@ -124,7 +124,7 @@
 
         <tr>
             <td>&nbsp</td>
-            <td>&nbsp; <asp:Calendar ID="calDateChoreographed" runat="server" Selected="Today" style="color:black"/></td>
+            <td>&nbsp; <asp:Calendar ID="calDateChoreographed" runat="server" Selected="Today" TitleStyle-BackColor="#fe7014" DayStyle-BackColor="White" SelectedDayStyle-BackColor="#fe7014" style="color:black"/></td>
         </tr>
 
         <tr>
@@ -140,6 +140,15 @@
     <%-- Button to add a book to a DB --%>
     <br />
     <asp:Button ID="BtnAdd" runat="server" Text="Add" style="color:black" OnClick="BtnAdd_Click" />
+
+    &nbsp;&nbsp;&nbsp;
+    <asp:Button ID="BtnUpdate" runat="server" Text="Update" style="color:black" OnClick="BtnUpdate_Click" />
+
+    &nbsp;&nbsp;&nbsp;
+    <asp:Button ID="BtnDelete" runat="server" Text="Delete" style="color:black" OnClick="BtnDelete_Click" />
+    
+    &nbsp;&nbsp;&nbsp;
+    <asp:Button ID="BtnCancel" runat="server" Text="Cancel" style="color:black" OnClick="BtnCancel_Click" />
 
     <%-- Feedback Label to show errors, provide confirmation, etc. --%>
     <br />

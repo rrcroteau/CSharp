@@ -3,6 +3,45 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
+    <style>
+        table {
+            border-collapse: collapse;
+            text-align: center;
+            vertical-align: middle;
+            color:black;
+        }
+
+
+        thead {
+            background-color: #333;
+            color: white;
+        }
+
+        th, td {
+            border: 1px solid black;
+            width: 20%;
+            padding: 5px;
+            text-align: center;
+        }
+
+        caption {
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 5px;
+            color:#fe7014;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: #fff;
+
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #eee;
+        }
+
+    </style>
+
     <h1>Line Dance Search</h1>
 
     <p>Optional Search Criteria</p>
