@@ -33,6 +33,15 @@ namespace SE256_Lab_RonC.Backend
         protected global::System.Web.UI.WebControls.TextBox txtDanceName;
 
         /// <summary>
+        /// RequiredField1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredField1;
+
+        /// <summary>
         /// txtChoreo1First control.
         /// </summary>
         /// <remarks>
@@ -42,6 +51,15 @@ namespace SE256_Lab_RonC.Backend
         protected global::System.Web.UI.WebControls.TextBox txtChoreo1First;
 
         /// <summary>
+        /// RequiredFieldValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+
+        /// <summary>
         /// txtChoreo1Last control.
         /// </summary>
         /// <remarks>
@@ -49,6 +67,15 @@ namespace SE256_Lab_RonC.Backend
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtChoreo1Last;
+
+        /// <summary>
+        /// RequiredFieldValidator3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
 
         /// <summary>
         /// txtChoreo2First control.
@@ -96,6 +123,15 @@ namespace SE256_Lab_RonC.Backend
         protected global::System.Web.UI.WebControls.TextBox txtMusic;
 
         /// <summary>
+        /// RequiredFieldValidator4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
+
+        /// <summary>
         /// txtArtist control.
         /// </summary>
         /// <remarks>
@@ -103,6 +139,15 @@ namespace SE256_Lab_RonC.Backend
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtArtist;
+
+        /// <summary>
+        /// RequiredFieldValidator5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
 
         /// <summary>
         /// rbLinePartner control.
@@ -114,13 +159,22 @@ namespace SE256_Lab_RonC.Backend
         protected global::System.Web.UI.WebControls.RadioButtonList rbLinePartner;
 
         /// <summary>
-        /// txtDifficulty control.
+        /// drpDifficulty control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDifficulty;
+        protected global::System.Web.UI.WebControls.DropDownList drpDifficulty;
+
+        /// <summary>
+        /// RequiredFieldValidator8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator8;
 
         /// <summary>
         /// txtSteps control.
@@ -132,6 +186,24 @@ namespace SE256_Lab_RonC.Backend
         protected global::System.Web.UI.WebControls.TextBox txtSteps;
 
         /// <summary>
+        /// RequiredFieldValidator6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
+
+        /// <summary>
+        /// CompareValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator1;
+
+        /// <summary>
         /// txtWalls control.
         /// </summary>
         /// <remarks>
@@ -139,6 +211,24 @@ namespace SE256_Lab_RonC.Backend
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtWalls;
+
+        /// <summary>
+        /// RequiredFieldValidator7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator7;
+
+        /// <summary>
+        /// RangeValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator RangeValidator1;
 
         /// <summary>
         /// drpCalMonth control.

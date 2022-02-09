@@ -13,5 +13,5 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2><%: Title %></h2>
     <h3>Line Dance Manager</h3>
-    <p>This application allows the user to create, read, update, and delete line dance records from a database.</p>
+    <p>This application allows an unverified user to search/view line dances from a database and view the latest videos. A verified user can create, read, update, and delete line dance records from the database using the <a href="~/Backend/" runat="server" style="color:#fe7014" >Backend</a>.</p>
 </asp:Content>

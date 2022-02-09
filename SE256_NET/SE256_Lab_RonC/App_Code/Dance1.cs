@@ -91,7 +91,7 @@ namespace SE256_Lab_RonC.App_Code
             SqlCommand comm = new SqlCommand();
 
             //write the SELECT statement to perform the SQL search
-            string strSQL = "SELECT DanceID, DanceName, Choreo1FName, Choreo1LName, Music, Artist FROM LineDances WHERE 0=0";
+            string strSQL = "SELECT DanceID, DanceName, Choreo1FName, Choreo1LName, Music, Artist, LineOrPartner, Difficulty, Steps, Walls FROM LineDances WHERE 0=0";
 
             //if the dance name or music is filled, use it in the search criteria
             if (strDanceName.Length > 0)

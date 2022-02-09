@@ -254,13 +254,13 @@ namespace SE256_Lab_RonC.App_Code
             get { return walls; }
             set
             {
-                if (value > -1 && value <5)
+                if (value > 0 && value <5)
                 {
                     walls = value;
                 }
                 else
                 {
-                    feedback += "\nERROR: Please enter number of walls between 1 and 4 (unless it is a partner dance, then set to 0)";
+                    feedback += "\nERROR: Please enter number of walls between 1 and 4";
                 }
             }
         }

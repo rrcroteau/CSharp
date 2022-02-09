@@ -64,7 +64,8 @@ namespace SE256_Lab_RonC.Backend
                     txtChoreo3Last.Text = dr["Choreo3LName"].ToString();
                     txtMusic.Text = dr["Music"].ToString();
                     txtArtist.Text = dr["Artist"].ToString();
-                    txtDifficulty.Text = dr["Difficulty"].ToString();
+                    rbLinePartner.SelectedValue = dr["LineOrPartner"].ToString();
+                    drpDifficulty.SelectedValue = dr["Difficulty"].ToString();
                     txtSteps.Text = dr["Steps"].ToString();
                     txtWalls.Text = dr["Walls"].ToString();
 
@@ -77,15 +78,15 @@ namespace SE256_Lab_RonC.Backend
                     drpCalYear.SelectedValue = DateTime.Parse(dr["DateChoreo"].ToString()).Year.ToString();
 
 
-                    //the code to deal with the radio button
-                    if (dr["LineOrPartner"].ToString() == "Line")
-                    {
-                        rbLinePartner.SelectedValue = "1";
-                    }
-                    else
-                    {
-                        rbLinePartner.SelectedValue = "2";
-                    }
+                    ////the code to deal with the radio button
+                    //if (dr["LineOrPartner"].ToString() == "Line")
+                    //{
+                    //    rbLinePartner.SelectedValue = "1";
+                    //}
+                    //else
+                    //{
+                    //    rbLinePartner.SelectedValue = "2";
+                    //}
 
                 }
 
@@ -110,6 +111,7 @@ namespace SE256_Lab_RonC.Backend
         {
             Dance1 temp = new Dance1    //create a temp dance object a run contstructor
             {
+
                 //set the value in the text/calendar to the appropriate class attr
                 DanceName = txtDanceName.Text,
                 Choreo1FName = txtChoreo1First.Text,
@@ -120,7 +122,7 @@ namespace SE256_Lab_RonC.Backend
                 Choreo3LName = txtChoreo3Last.Text,
                 Music = txtMusic.Text,
                 Artist = txtArtist.Text,
-                Difficulty = txtDifficulty.Text,
+                Difficulty = drpDifficulty.Text,
                 DateChoreo = calDateChoreographed.SelectedDate
             };
 
@@ -207,22 +209,11 @@ namespace SE256_Lab_RonC.Backend
                 Choreo3LName = txtChoreo3Last.Text,
                 Music = txtMusic.Text,
                 Artist = txtArtist.Text,
-                Difficulty = txtDifficulty.Text,
+                Difficulty = drpDifficulty.SelectedValue,
+                LineOrPartner = rbLinePartner.SelectedValue,
                 DateChoreo = calDateChoreographed.SelectedDate
             };
-
-
-            //determine what the line or partner value should be based on the radio button selection
-            if (rbLinePartner.SelectedValue == "1")
-            {
-                temp.LineOrPartner = "Line";
-            }
-
-            else
-            {
-                temp.LineOrPartner = "Partner";
-            }
-
+     
             //parse the strings to ints where necessary (Steps and Walls)
             if (Int32.TryParse(txtSteps.Text, out Int32 intSteps))  //uses inline declartion of temp used intSteps var
             {
