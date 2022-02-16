@@ -1,0 +1,33 @@
+﻿@page
+@model TroubleTickets.Pages.AddTicketModel
+@{
+    ViewData["Title"] = "Add Ticket";
+}
+
+<h1>Add Ticket</h1>
+
+<br />
+
+<form method="post">
+
+    @* We are using regular HTML to create the form, binding to specific class properties, but showing more user-friendly desc *@
+    <input type="text" asp-for="tTicket.Ticket_Title" placeholder="Brief Title" />
+    <input type="text" asp-for="tTicket.Ticket_Desc" placeholder="Description of Problem" />
+    <input type="text" asp-for="tTicket.Category" placeholder="Category" />
+    <input type="text" asp-for="tTicket.Reporting_Email" placeholder="Your Email" />
+
+    @* Button will submit the form data via a post method *@
+    <button type="submit">Submit</button>
+
+</form>
+
+@{ 
+    //if the form data is not null, display some feedback to the user
+    if (Model.tTicket is null == false)
+    {
+        <br />
+        <h1>Results</h1>
+        <p>@Model.tTicket.Ticket_Title</p>
+        <p>@Model.tTicket.Reporting_Email</p>
+    }
+}
