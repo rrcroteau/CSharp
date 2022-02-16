@@ -1,0 +1,46 @@
+﻿@page
+@model EnergyDrinks.Pages.AddDrinkModel
+@{
+    ViewData["Title"] = "Add Drink";
+}
+
+<h1>Add A Drink</h1>
+<br />
+
+<form method="post">
+
+    @* Use html form to bind to specific class properties while giving user a friendly description *@
+    <input type="text" asp-for="TempDrink.Mfr" placeholder="Drink Manufacturer" />
+    <input type="text" asp-for="TempDrink.Name" placeholder="Drink Name" />
+    <input type="text" asp-for="TempDrink.Flavor" placeholder="Drink Flavor" />
+    <br />
+    <input type="text" asp-for="TempDrink.Size" placeholder="Size (in ounces)" />
+    <input type="text" asp-for="TempDrink.Price" placeholder="Price (e.g. 2.99)" />
+    <input type="text" asp-for="TempDrink.Support_Email" placeholder="Customer Support Email" />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="dtp">Release Date</label>
+    <input type="datetime-local" asp-for="TempDrink.Release_Date" id="dtp" />
+
+    @* Create a submit button that will POST (as the method of this form is post) *@
+    <br />
+    <button type="submit">Submit</button>
+
+</form>
+
+<br />
+
+@{
+    if (Model.TempDrink is null == false) //if the form data is not null, i.e. they filled stuff in
+    {
+        <h2>Results</h2>
+        <hr />
+        <p>Manufacturer: @Model.TempDrink.Mfr</p>
+        <p>Name: @Model.TempDrink.Name</p>
+        <p>Flavor: @Model.TempDrink.Flavor</p>
+        <p>Size: @Model.TempDrink.Size oz. </p>
+        <p>Price: $@Model.TempDrink.Price</p>
+        <p>Support: @Model.TempDrink.Support_Email</p>
+        <p>Release Date: @Model.TempDrink.Release_Date</p>
+    }
+
+}
