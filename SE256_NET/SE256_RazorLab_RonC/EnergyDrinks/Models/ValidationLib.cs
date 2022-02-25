@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations; //necessary for Validation attribute
-//This is needed for validation purposes (IModelValidator) //
-using Microsoft.AspNetCore.Mvc.ModelBinding.Validation; //the second class function will need this
+using System.ComponentModel.DataAnnotations; //necessary for validation attr
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation; //used in the second class function
 
-namespace TroubleTickets.Models
+namespace EnergyDrinks.Models
 {
-   
+    public class ValidationLib
+    {
+
         //create a class to validate dates -- this one will be used to verify a valid date in the past/present
         // <1> take in an object and convert it to a DateTime object
         // <2> if the date is past/present (i.e. less than the date and time the validation occurs) return a Success result
@@ -26,7 +27,7 @@ namespace TroubleTickets.Models
 
                 else // <3>
                 {
-                    return new ValidationResult(ErrorMessage); 
+                    return new ValidationResult(ErrorMessage);
                 }
 
             }
@@ -39,7 +40,7 @@ namespace TroubleTickets.Models
         // <4> if the validation fails, return the error message
         public class StringOptionsValidate : Attribute, IModelValidator
         {
-            public string [] Allowed { get; set; } // <1> 
+            public string[] Allowed { get; set; } // <1> 
             public string ErrorMessage { get; set; } // <2>
 
             public IEnumerable<ModelValidationResult> Validate(ModelValidationContext context)
@@ -56,7 +57,5 @@ namespace TroubleTickets.Models
             }
         }
 
-
-
-
+    }
 }

@@ -10,16 +10,48 @@
 <form method="post">
 
     @* Use html form to bind to specific class properties while giving user a friendly description *@
-    <input type="text" asp-for="TempDrink.Mfr" placeholder="Drink Manufacturer" />
-    <input type="text" asp-for="TempDrink.Name" placeholder="Drink Name" />
-    <input type="text" asp-for="TempDrink.Flavor" placeholder="Drink Flavor" />
-    <br />
-    <input type="text" asp-for="TempDrink.Size" placeholder="Size (in ounces)" />
-    <input type="text" asp-for="TempDrink.Price" placeholder="Price (e.g. 2.99)" />
-    <input type="text" asp-for="TempDrink.Support_Email" placeholder="Customer Support Email" />
-    <br />
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="dtp">Release Date</label>
-    <input type="datetime-local" asp-for="TempDrink.Release_Date" id="dtp" />
+
+    <div class="form-group">
+        <label asp-for="TempDrink.Mfr"></label>
+        <input type="text" class="form-control" asp-for="TempDrink.Mfr" placeholder="Drink Manufacturer" />
+        <span asp-validation-for="TempDrink.Mfr" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="TempDrink.Name"></label>
+        <input type="text" class="form-control" asp-for="TempDrink.Name" placeholder="Drink Name" />
+        <span asp-validation-for="TempDrink.Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="TempDrink.Flavor"></label>
+        <input type="text" class="form-control" asp-for="TempDrink.Flavor" placeholder="Drink Flavor" />
+        <span asp-validation-for="TempDrink.Flavor" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="TempDrink.Size"></label>
+        <input type="text" class="form-control" asp-for="TempDrink.Size" placeholder="Drink Size" />
+        <span asp-validation-for="TempDrink.Size" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="TempDrink.Price"></label>
+        <input type="text" class="form-control" asp-for="TempDrink.Price" placeholder="Drink Price" />
+        <span asp-validation-for="TempDrink.Price" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="TempDrink.Support_Email"></label>
+        <input type="text" class="form-control" asp-for="TempDrink.Support_Email" placeholder="Support Email" />
+        <span asp-validation-for="TempDrink.Support_Email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="TempDrink.Release_Date"></label>
+        <input type="datetime-local" class="form-control" asp-for="TempDrink.Release_Date" placeholder="Release Date" />
+        <span asp-validation-for="TempDrink.Release_Date" class="text-danger"></span>
+    </div>
 
     @* Create a submit button that will POST (as the method of this form is post) *@
     <br />
@@ -28,6 +60,11 @@
 </form>
 
 <br />
+
+@* Scripts to incorporate the client side validation of input fields in the View *@
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 
 @{
     if (Model.TempDrink is null == false) //if the form data is not null, i.e. they filled stuff in
