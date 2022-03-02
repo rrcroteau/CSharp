@@ -78,5 +78,10 @@ C:\Users\008012980\Desktop\NEIT_Repos\CSharp\SE256_NET\SE256_RazorActivity_RonC\
 C:\Users\008012980\Desktop\NEIT_Repos\CSharp\SE256_NET\SE256_RazorActivity_RonC\TroubleTickets\obj\Debug\net5.0\TroubleTickets.pdb
 C:\Users\008012980\Desktop\NEIT_Repos\CSharp\SE256_NET\SE256_RazorActivity_RonC\TroubleTickets\obj\Debug\net5.0\TroubleTickets.genruntimeconfig.cache
 C:\Users\008012980\Desktop\NEIT_Repos\CSharp\SE256_NET\SE256_RazorActivity_RonC\TroubleTickets\obj\Debug\net5.0\TroubleTickets.csproj.CopyComplete
-C:\Users\008012980\Desktop\NEIT_Repos\CSharp\SE256_NET\SE256_RazorActivity_RonC\TroubleTickets\obj\Debug\net5.0\TroubleTickets.csproj.AssemblyReference.cache
 C:\Users\Ronald\Desktop\My_Repos\CSharp\SE256_NET\SE256_RazorActivity_RonC\TroubleTickets\obj\Debug\net5.0\Razor\Pages\AddTicket.cshtml.g.cs
+C:\Users\008012980\Desktop\NEIT_Repos\CSharp\SE256_NET\SE256_RazorActivity_RonC\TroubleTickets\bin\Debug\net5.0\System.Data.SqlClient.dll
+C:\Users\008012980\Desktop\NEIT_Repos\CSharp\SE256_NET\SE256_RazorActivity_RonC\TroubleTickets\bin\Debug\net5.0\runtimes\win-arm64\native\sni.dll
+C:\Users\008012980\Desktop\NEIT_Repos\CSharp\SE256_NET\SE256_RazorActivity_RonC\TroubleTickets\bin\Debug\net5.0\runtimes\win-x64\native\sni.dll
+C:\Users\008012980\Desktop\NEIT_Repos\CSharp\SE256_NET\SE256_RazorActivity_RonC\TroubleTickets\bin\Debug\net5.0\runtimes\win-x86\native\sni.dll
+C:\Users\008012980\Desktop\NEIT_Repos\CSharp\SE256_NET\SE256_RazorActivity_RonC\TroubleTickets\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\008012980\Desktop\NEIT_Repos\CSharp\SE256_NET\SE256_RazorActivity_RonC\TroubleTickets\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll

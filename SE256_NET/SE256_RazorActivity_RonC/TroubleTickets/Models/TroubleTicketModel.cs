@@ -44,5 +44,7 @@ namespace TroubleTickets.Models
 
         [Required]
         public bool Active { get; set; } //ticket is open (true) or closed (false) - Binary field
+
+        public string Feedback { get; set; }  //used to share feedback with the user
     }
 } 

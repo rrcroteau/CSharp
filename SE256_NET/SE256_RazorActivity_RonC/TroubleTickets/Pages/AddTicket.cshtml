@@ -58,11 +58,11 @@
 
 @{ 
     //if the form data is not null, display some feedback to the user
-    if (Model.tTicket is null == false)
+    if (Model.tTicket != null && Model.tTicket.Feedback != null)
     {
         <br />
         <h1>Results</h1>
-        <p>@Model.tTicket.Ticket_Title</p>
-        <p>@Model.tTicket.Reporting_Email</p>
+        <p>@Model.tTicket.Feedback</p>
+
     }
 }
