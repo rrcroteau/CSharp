@@ -11,15 +11,50 @@
 <form method="post">
 
     @* We are using regular HTML to create the form, binding to specific class properties, but showing more user-friendly desc *@
-    <input type="text" asp-for="tTicket.Ticket_Title" placeholder="Brief Title" />
-    <input type="text" asp-for="tTicket.Ticket_Desc" placeholder="Description of Problem" />
-    <input type="text" asp-for="tTicket.Category" placeholder="Category" />
-    <input type="text" asp-for="tTicket.Reporting_Email" placeholder="Your Email" />
 
+    <div class="form-group">
+        <label asp-for="tTicket.Ticket_Title"></label>
+        <input type="text" class="form-control" asp-for="tTicket.Ticket_Title" placeholder="Brief Title" />
+        <span asp-validation-for="tTicket.Ticket_Title" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="tTicket.Ticket_Desc"></label>
+        <input type="text" class="form-control" asp-for="tTicket.Ticket_Desc" placeholder="Description of Problem" />
+        <span asp-validation-for="tTicket.Ticket_Desc" class="text-danger"></span>
+    </div>
+
+    @*<div class="form-group">
+            <label asp-for="tTicket.Category"></label>
+            <select asp-for="tTicket.Category" class="form-control">
+
+
+
+
+            </select>
+            <span asp-validation-for="tTicket.Category" class="text-danger"></span>
+        </div>*@
+
+    <div class="form-group">
+            <label asp-for="tTicket.Category"></label>
+            <input asp-for="tTicket.Category" class="form-control" type="text" placeholder="Category" />
+            <span asp-validation-for="tTicket.Category" class="text-danger"></span>
+     </div>
+
+    <div class="form-group">
+        <label asp-for="tTicket.Reporting_Email"></label>
+        <input type="text" class="form-control" asp-for="tTicket.Reporting_Email" placeholder="Your Email" />
+        <span asp-validation-for="tTicket.Reporting_Email" class="text-danger"></span>
+    </div>
     @* Button will submit the form data via a post method *@
     <button type="submit">Submit</button>
 
 </form>
+
+@* Scripts to incorporate the client side validation of input fields in the View *@
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 
 @{ 
     //if the form data is not null, display some feedback to the user

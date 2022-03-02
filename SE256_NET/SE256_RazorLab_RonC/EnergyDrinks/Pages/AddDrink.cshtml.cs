@@ -11,12 +11,15 @@ namespace EnergyDrinks.Pages
     public class AddDrinkModel : PageModel
     {
         [BindProperty] //get the object information from a form (post method)
-        public EnergyDrinkModel TempDrink { get; set; } //instance of Energy Drink Model 
+        public EnergyDrinksModel TempDrink { get; set; } //instance of Energy Drink Model 
 
+
+        //nothing on original page load yet
         public void OnGet()
         {
         }
 
+        //this event handles when there is a post event (the submit button, for example, as the form using post method vs. a get method)
         public IActionResult OnPost()
         {
             IActionResult temp; //temp result var

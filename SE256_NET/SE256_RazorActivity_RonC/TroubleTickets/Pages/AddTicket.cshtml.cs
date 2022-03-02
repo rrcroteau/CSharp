@@ -13,6 +13,7 @@ namespace TroubleTickets.Pages
         [BindProperty] //requires obj to come from a form
         public TroubleTicketModel tTicket { get; set; } //create instance of ticket model
 
+        //nothing here yet on original page load
         public void OnGet()
         {
         }
@@ -31,7 +32,7 @@ namespace TroubleTickets.Pages
                 temp = Page();
             }
 
-            return temp;
+            return temp; //return the resulting IActionResult
         }
     }
 }
