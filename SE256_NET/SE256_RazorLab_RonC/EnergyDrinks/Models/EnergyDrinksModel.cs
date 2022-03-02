@@ -46,6 +46,6 @@ namespace EnergyDrinks.Models
         [Required]
         public bool Active { get; set; } //is the drink still in production (true - yes ; false - no) 
 
-
+        public string Feedback { get; set; }  //used to share feedback with the user
     }
 }

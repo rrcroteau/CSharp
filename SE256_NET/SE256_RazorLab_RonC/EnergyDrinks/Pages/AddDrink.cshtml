@@ -67,17 +67,13 @@
 <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 
 @{
-    if (Model.TempDrink is null == false) //if the form data is not null, i.e. they filled stuff in
+    //if the form data is not null, display some feedback to the user
+    if (Model.TempDrink != null && Model.TempDrink.Feedback != null)
     {
-        <h2>Results</h2>
-        <hr />
-        <p>Manufacturer: @Model.TempDrink.Mfr</p>
-        <p>Name: @Model.TempDrink.Name</p>
-        <p>Flavor: @Model.TempDrink.Flavor</p>
-        <p>Size: @Model.TempDrink.Size oz. </p>
-        <p>Price: $@Model.TempDrink.Price</p>
-        <p>Support: @Model.TempDrink.Support_Email</p>
-        <p>Release Date: @Model.TempDrink.Release_Date</p>
+        <br />
+        <h1>Results</h1>
+        <p>@Model.TempDrink.Feedback</p>
+
     }
 
 }

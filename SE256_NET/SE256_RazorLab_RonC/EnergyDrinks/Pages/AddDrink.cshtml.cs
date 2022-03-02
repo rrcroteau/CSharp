@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using EnergyDrinks.Models; //included in order to make a temporary energy drink model
+//add the ability to use IConfiguration
+using Microsoft.Extensions.Configuration;
 
 namespace EnergyDrinks.Pages
 {
@@ -12,6 +14,14 @@ namespace EnergyDrinks.Pages
     {
         [BindProperty] //get the object information from a form (post method)
         public EnergyDrinksModel TempDrink { get; set; } //instance of Energy Drink Model 
+
+        private readonly IConfiguration _configuration; //instance of IConfiguration class...allows us to read in from config file like appsettings 
+
+        public AddDrinkModel(IConfiguration configuration)
+        {
+            //constructor code
+            _configuration = configuration;
+        }
 
 
         //nothing on original page load yet
@@ -31,6 +41,12 @@ namespace EnergyDrinks.Pages
 
             else
             {
+                if (TempDrink is null == false)
+                {
+                    EnergyDrinksDataAccessLayer factory = new EnergyDrinksDataAccessLayer(_configuration);
+
+                    factory.Create(TempDrink); //runs the Create function to add a record 
+                }
                 temp = Page(); //reload current page
             }
 
