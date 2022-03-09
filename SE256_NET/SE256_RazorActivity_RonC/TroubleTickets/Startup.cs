@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -24,7 +26,28 @@ namespace TroubleTickets
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddHttpContextAccessor();
+            services.AddSession();
+            services.AddMemoryCache();
+
             services.AddRazorPages();
+            
+
+            //another format for adding session, where the default timeout is changed
+            /*
+            services.AddSession(options => {
+                options.IdleTimeout = TimeSpan.FromMinutes(30);
+            });
+             */
+
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                //determines whether consent for non-essential cookies is needed for a given request
+                options.CheckConsentNeeded = context => false;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
+
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,6 +66,9 @@ namespace TroubleTickets
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseCookiePolicy();
+
+            app.UseSession();
 
             app.UseRouting();
 
@@ -52,6 +78,9 @@ namespace TroubleTickets
             {
                 endpoints.MapRazorPages();
             });
+
+
+            //app.UseMvc();
         }
     }
 }
