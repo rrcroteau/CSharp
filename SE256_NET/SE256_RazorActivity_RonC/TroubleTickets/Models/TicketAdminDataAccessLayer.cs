@@ -64,7 +64,7 @@ namespace TroubleTickets.Models
                 }
             }
 
-            catch (Exception err)
+            catch //(Exception err)
             {
                 //nothing at this moment
             }

@@ -1,4 +1,69 @@
 ﻿@page
 @model TroubleTickets.Pages.Admin.ControlPanelModel
 @{
+    ViewData["Title"] = "Control Panel";
 }
+
+<h1>Control Panel</h1>
+
+<table class="table table-bordered table-sm table-striped">
+
+    <thead>
+        <tr>
+
+            <th>ID</th>
+            <th>Ticket Title</th>
+            <th>Category</th>
+            <th>Submitted By</th>
+            <th>Reported On</th>
+            <th>Active</th>
+            <th>DOTS Contact</th>
+            <th>Response</th>
+
+        </tr>
+    </thead>
+
+    <tbody>
+        @if (Model == null)
+        {
+            <tr>
+                <td colspan="7" class="text-center">No Model</td>
+            </tr>
+        }
+
+        else
+        {
+            @foreach (var p in Model.tix)
+            {
+                <tr>
+                    <td>@p.Ticket_ID</td>
+                    <td>@p.Ticket_Title</td>
+                    <td>@p.Category</td>
+                    <td>@p.Reporting_Email</td>
+                    <td>@p.Orig_Date</td>
+
+                    @{
+                        if (p.Active == true)
+                        {
+                            <td>Active</td>
+                        }
+                        else
+                        {
+                            <td>Closed</td>
+                        }
+                    }
+
+                    <td>@p.Responder_Email</td>
+                    <td style="width:100%;">@p.Responder_Notes</td>
+
+                    @* Create links to edit and delete pages where can admin can edit (update) the tickets or delete them *@
+                    <td><a asp-page="/Admin/EditTicket" asp-route-id="@p.Ticket_ID">Edit</a> </td>
+                    <td><a asp-page="/Admin/DeleteTicket" asp-route-id="@p.Ticket_ID" class="text-danger">Delete</a> </td>
+
+                </tr>
+            }
+        }
+
+    </tbody>
+
+</table>
