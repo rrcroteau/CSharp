@@ -1,0 +1,74 @@
+﻿@page
+@model EnergyDrinks.Pages.Admin.ControlPanelModel
+@{
+    ViewData["Title"] = "Control Panel";
+}
+
+<h1>Control Panel</h1>
+
+<div>
+    <table class="table table-bordered table-sm table-striped">
+
+        <thead>
+            <tr>
+
+                <th>ID</th>
+                <th>Manufacturer</th>
+                <th>Name</th>
+                <th>Flavor</th>
+                <th>Size</th>
+                <th>Release Date</th>
+                <th>Price</th>
+                <th>Support Email</th>
+                <th>Active</th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+            @if (Model == null)
+            {
+                <tr>
+                    <td colspan="7" class="text-center">No Model</td>
+                </tr>
+            }
+
+            else
+            {
+                @foreach (var p in Model.Drinks)
+                {
+        <tr>
+            <td>@p.Drink_ID</td>
+            <td>@p.Mfr</td>
+            <td>@p.Name</td>
+            <td>@p.Flavor</td>
+            <td>@p.Size oz</td>
+            <td>@p.Release_Date.ToShortDateString()</td>
+            <td>$@p.Price</td>
+            <td>@p.Support_Email</td>
+
+            @{
+                if (p.Active == true)
+                {
+                    <td>Active</td>
+                }
+                else
+                {
+                    <td>Discontinued</td>
+                }
+            }
+
+
+
+            @* Create links to edit and delete pages where can admin can edit (update) the Drinks or delete them *@
+            <td><a asp-page="/Admin/EditDrink" asp-route-id="@p.Drink_ID">Edit</a> </td>
+            <td><a asp-page="/Admin/DeleteDrink" asp-route-id="@p.Drink_ID" class="text-danger">Delete</a> </td>
+
+        </tr>
+                }
+            }
+
+        </tbody>
+
+    </table>
+</div>

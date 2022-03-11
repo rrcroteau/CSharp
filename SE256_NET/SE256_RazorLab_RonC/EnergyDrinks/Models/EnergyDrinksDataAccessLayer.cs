@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 //add using for the SQL DB componenet
 using System.Data;
 using System.Data.SqlClient;
-//add the trouble ticket models folder
+//add the energy drink models folder
 using EnergyDrinks.Models;
 //add the ability to use IConfiguration
 using Microsoft.Extensions.Configuration;
@@ -36,7 +36,7 @@ namespace EnergyDrinks.Models
                 //we are using parameters to avoid complications with SQL injection attacks
                 string sql = "INSERT Into EnergyDrinks (Mfr, Name, Flavor, Size, Price, Support_Email, Release_Date) VALUES (@Mfr, @Name, @Flavor, @Size, @Price, @Support_Email, @Release_Date);";
 
-                //initialize feedback back to empty string to avoid re-using error messages each time a ticket is created
+                //initialize feedback back to empty string to avoid re-using error messages each time a drink is created
                 drink.Feedback = "";
 
                 //use TRY to attempt to connect with the resource, else it hits the CATCH
@@ -127,6 +127,121 @@ namespace EnergyDrinks.Models
             }
 
             return ListDrinks;
+
+        }
+
+        //code to find one specific record based on ID (the drink we want to edit) -- we need to use "id" here due to the routing referred to the third component of the URL route as "id"
+        public EnergyDrinksModel GetOneRecord(int? id)
+        {
+            EnergyDrinksModel drink = new EnergyDrinksModel(); //the obj to hold the record based on ID
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    //config the command obj with the SQL statement and connection
+                    string strSQL = "SELECT * FROM EnergyDrinks WHERE Drink_ID = @Drink_ID;";
+                    SqlCommand cmd = new SqlCommand(strSQL, con);
+                    cmd.CommandType = CommandType.Text;
+
+                    //set the ID param
+                    cmd.Parameters.AddWithValue("Drink_ID", id);
+
+                    con.Open();
+                    SqlDataReader rdr = cmd.ExecuteReader(); //populate the DR
+
+                    //loop through the record, fill a temp drink object with the data from each record, add the object to the list, then we can use that to display with CSHTML
+                    while (rdr.Read())
+                    {
+                        drink.Drink_ID = Convert.ToInt32(rdr["Drink_ID"]); //needed to convert it to an Int32
+                        drink.Mfr = rdr["Mfr"].ToString();
+                        drink.Name = rdr["Name"].ToString();
+                        drink.Flavor = rdr["Flavor"].ToString();
+                        drink.Size = rdr["Size"].ToString();
+                        drink.Price = rdr["Price"].ToString();
+                        drink.Support_Email = rdr["Support_Email"].ToString();
+                        drink.Release_Date = DateTime.Parse(rdr["Release_Date"].ToString()); //convert to string then date
+                        drink.Active = Boolean.Parse(rdr["Active"].ToString()); //convert to string then boolean
+                    }
+
+                    con.Close();
+
+                }
+            }
+            catch (Exception err)
+            {
+                drink.Feedback = "Error" + err.Message; //if we encountered an error, display it in feedback
+            }
+
+            return drink; //return the filled list object so the razor page can build the html from it
+        }
+
+        //to update records of a particular trouble ticket
+        public void UpdateDrink(EnergyDrinksModel TempDrink)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(); //create a basic command object, we will at the SQL command and connection later
+
+                    
+                    string strSQL;
+
+                    strSQL = "UPDATE EnergyDrinks SET Price = @Price, Support_Email = @Support_Email, Active = @Active WHERE Drink_ID = @Drink_ID;";
+
+
+
+                    //configure the command object
+                    cmd.CommandText = strSQL;
+                    cmd.Connection = con;
+                    cmd.CommandType = CommandType.Text;
+
+                    //fill the parameters with the values
+                    cmd.Parameters.AddWithValue("@Price", TempDrink.Price);
+                    cmd.Parameters.AddWithValue("@Support_Email", TempDrink.Support_Email);
+
+                    cmd.Parameters.AddWithValue("@Active", TempDrink.Active);
+                    cmd.Parameters.AddWithValue("@Drink_ID", TempDrink.Drink_ID);
+
+                    //execute the update
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+            }
+            catch (Exception err)
+            {
+                //report the error if one occurs
+                TempDrink.Feedback = "ERROR: " + err.Message;
+            }
+        }
+
+        //to delete a particular record based on the ticket ID
+        public EnergyDrinksModel DeleteDrink(int? id)
+        {
+            EnergyDrinksModel ticket = new EnergyDrinksModel(); //placeholder obj to hold the record based on ID
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    string strSQL = "DELETE FROM EnergyDrinks WHERE Drink_ID = @Drink_ID;";
+                    SqlCommand cmd = new SqlCommand(strSQL, con);
+                    cmd.CommandType = CommandType.Text;
+
+                    cmd.Parameters.AddWithValue("@Drink_ID", id);
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+            }
+            catch (Exception err)
+            {
+                ticket.Feedback = "ERROR: " + err.Message; //if there is an error, put it in feedback
+            }
+
+            return ticket;
 
         }
     }
